@@ -10,26 +10,27 @@
     padding: 36px;
 
     background: #2e303c7e;
-    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.164);
     border-radius: 8px;
-  
-  h3 {
-    font-size: 1.4rem;
-    font-weight: normal;
-    letter-spacing: 3px;
-  }
-
-  img {
+    
+    h3 {
+      font-size: 1.4rem;
+      font-weight: normal;
+      letter-spacing: 3px;
+    }
+    
+    img {
     width: 180px;
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.164);
 
     margin-bottom: 20px;    
   }
 
   .profileContent {
+
     flex-direction: column;
 
      div {       
