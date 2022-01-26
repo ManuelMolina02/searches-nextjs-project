@@ -1,10 +1,9 @@
-import { useState } from 'react'
-import { countrieProps } from '../types'
+import { countrieProps } from '../../types'
 
-import styles from '../styles/content.module.scss'
-import { ProfileComponent } from '../components/ProfileComponent'
-import { PopulationComponent } from '../components/PopulationComponent'
-import { WidgetsComponent } from '../components/WidgetsComponent'
+import styles from './styles.module.scss'
+import { ProfileComponent } from '../ProfileComponent'
+import { PopulationComponent } from '../PopulationComponent'
+import { WidgetsComponent } from '../WidgetsComponent'
 
 
 
@@ -20,7 +19,6 @@ export function Content({ countries, countrieId }: contentProps) {
   const [countrie] = countries.filter(countrie => countrie.id === countrieId)
 
   return (
-
     <div className={styles.container} >
 
       <div className={styles.content}>

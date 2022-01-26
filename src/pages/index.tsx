@@ -1,15 +1,11 @@
 import axios from "axios";
 import { Sidebar } from "../components/Sidebar/ index";
 import { GetServerSideProps } from 'next'
-import { Content } from "./content";
+import { Content } from "../components/Content";
 import { useState } from "react";
 
 
-
 export default function Home({ countriesSearches }) {
-	console.log(handleClickCountrie)
-
-
 	const [countrieSelected, setCountrieSelected] = useState('025597')
 
 	function handleClickCountrie(id: string) {

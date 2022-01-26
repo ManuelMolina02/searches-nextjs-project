@@ -29,8 +29,7 @@ export function ChartBar({ population }: chartBarProps) {
 	return (
 
 		<div className={styles.chart}>
-
-			<Doughnut data={data} type={Array} />
+			<Doughnut data={data} />
 		</div>
 
 	);
