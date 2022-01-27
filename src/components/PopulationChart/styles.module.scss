@@ -1,6 +1,6 @@
 .populationContainer{
   width: 320px;
-  height: 230px;
+  height: 280px;
 
   padding: 20px ;
 
@@ -8,11 +8,8 @@
   flex-direction: column;
   align-items: center;
 
-  position: relative;
-  top: -246px;
-
-  background: #2e303c7e;
-  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.164);
+  background: var(--grayCyan-800);
+  box-shadow: var(--box-shadow);
   border-radius: 8px;
 
   .chart {
@@ -47,7 +44,7 @@
       gap: 4px;
       
       div {
-        color: #9b99a7;
+        color: var(--grayCyan-300);
       }
       
       a {

@@ -5,12 +5,12 @@
     justify-content: center;
     align-items: center;
 
-    width: 320px;
-    height: 20rem;
+    width: 240px;
+    height: 540px;
     padding: 36px;
 
-    background: #2e303c7e;
-    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.164);
+    background: var(--grayCyan-800);
+    box-shadow: var(--box-shadow);
     border-radius: 8px;
     
     h3 {
@@ -24,7 +24,7 @@
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.164);
+    box-shadow: var(--box-shadow);
 
     margin-bottom: 20px;    
   }
@@ -41,7 +41,7 @@
        margin-top: 10px;
 
       p {
-        color: #9c99ac;
+        color: var(--grayCyan-300);
       }
 
       h5, p {

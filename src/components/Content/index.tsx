@@ -2,9 +2,10 @@ import { countrieProps } from '../../types'
 
 import styles from './styles.module.scss'
 import { ProfileComponent } from '../ProfileComponent'
-import { PopulationComponent } from '../PopulationComponent'
-import { WidgetsComponent } from '../WidgetsComponent'
+import { PopulationComponent } from '../PopulationChart'
+import { AgeGroupChart } from '../AgeGroupChart'
 import { Map } from '../Map'
+import { Table } from '../Table'
 
 interface contentProps {
   countries: countrieProps[],
@@ -20,48 +21,20 @@ export function Content({ countries, countrieId }: contentProps) {
   return (
     <div className={styles.container} >
 
-      <div className={styles.content}>
-        <Map mapCoordinates={countrie.map_coordinate} />
+      <div className={styles.row}>
         <ProfileComponent countrie={countrie} />
-        <WidgetsComponent countrie={countrie} />
-        <PopulationComponent countrie={countrie} />
+        <Map mapCoordinates={countrie.map_coordinate} />
 
+      </div>
+      <div className={styles.row}>
+        <PopulationComponent countrie={countrie} />
+        <AgeGroupChart countrie={countrie} />
+      </div>
+      <div className={styles.row}>
+        <Table countries={countries} />
       </div>
 
 
-      <table className={styles.tableContainer}>
-
-        <thead>
-          <tr>
-            <th>Bandeira</th>
-            <th>Nome do País | Sigla</th>
-            <th>Continente</th>
-            <th>Capital</th>
-
-          </tr>
-
-        </thead>
-
-        <tbody>
-
-          {
-            countries.map(countrie => (
-              <tr key={countrie.id} >
-
-                <td>
-                  <img src={countrie.url_flag} />
-                </td>
-                <td>{countrie.name} | {countrie.initials}</td>
-                <td>{countrie.continent}</td>
-                <td>{countrie.capital}</td>
-
-              </tr>
-            ))
-
-          }
-
-        </tbody>
-      </table>
     </div>
 
   )

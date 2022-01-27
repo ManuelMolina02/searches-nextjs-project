@@ -20,8 +20,8 @@ export function Map({ mapCoordinates }: MapProps) {
   const style = 'mapbox://styles/manuelmolina2/ckyx0c39b001l14o84tkdahzp'
 
   const viewport = {
-    width: 540,
-    height: 550,
+    width: "96%",
+    height: "96%",
     latitude: mapCoordinates.latitude, // eixo Y
     longitude: mapCoordinates.longitude, // eixo X
     zoom: mapCoordinates.zoom,

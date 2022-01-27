@@ -3,6 +3,7 @@ import { Doughnut } from "react-chartjs-2";
 
 
 export function PopulationComponent({ countrie }) {
+
   interface numbersProps {
     total: number,
     populationData: {
