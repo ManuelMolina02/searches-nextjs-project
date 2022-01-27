@@ -1,0 +1,28 @@
+.MapContainer {
+  width: 560px;
+  height: 570px;
+  
+  align-items: center;
+  justify-content: center;
+  
+  background: #2e303c7e;
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.164);
+  border-radius: 8px;
+  div {
+    border-radius: 8px;
+    width: 0px;
+    // cursor: not-allowed;
+  }
+
+  
+  .mapMarker{
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+    border: 3px solid rgba(36, 140, 209, 0.925);
+    background-color: rgba(255, 255, 255, 0.452);
+    opacity: .5;
+  }
+
+}

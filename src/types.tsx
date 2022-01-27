@@ -6,12 +6,21 @@ export interface countrieProps {
   capital: string;
   continent: string;
   url_flag: string;
+  map_coordinate: {
+    latitude: number,
+    longitude: number,
+    zoom: number,
+    marker_position: {
+      setTop: number,
+      setLeft: number
+    }
+  },
   searches: {
     population: [
       {
         color: string,
         gender: string,
-        amount: string
+        amount: number
       }
     ];
     economy: []

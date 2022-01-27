@@ -4,8 +4,7 @@ import styles from './styles.module.scss'
 import { ProfileComponent } from '../ProfileComponent'
 import { PopulationComponent } from '../PopulationComponent'
 import { WidgetsComponent } from '../WidgetsComponent'
-
-
+import { Map } from '../Map'
 
 interface contentProps {
   countries: countrieProps[],
@@ -22,10 +21,10 @@ export function Content({ countries, countrieId }: contentProps) {
     <div className={styles.container} >
 
       <div className={styles.content}>
+        <Map mapCoordinates={countrie.map_coordinate} />
         <ProfileComponent countrie={countrie} />
-        <WidgetsComponent />
+        <WidgetsComponent countrie={countrie} />
         <PopulationComponent countrie={countrie} />
-        <WidgetsComponent />
 
       </div>
 

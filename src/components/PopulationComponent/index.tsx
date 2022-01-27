@@ -1,5 +1,5 @@
-import { ChartBar } from '../ChartBar/ChartBar'
 import styles from './styles.module.scss'
+import { Doughnut } from "react-chartjs-2";
 
 
 export function PopulationComponent({ countrie }) {
@@ -11,7 +11,7 @@ export function PopulationComponent({ countrie }) {
   }
 
   const populationData = countrie.searches.population.map(data =>
-    Number(data.amount.replace(/[^0-9]/g, ''))
+    data.amount
   )
 
   const total = populationData.reduce((acc, amount) => acc += amount)
@@ -21,17 +21,29 @@ export function PopulationComponent({ countrie }) {
     populationData
   }
 
+  const dataChart = {
+    datasets: [
+      {
+
+        data: [populationData[1], populationData[0]],
+        backgroundColor: [
+          'rgba(255, 99, 132, .8)',
+          'rgba(54, 162, 235, .8)',
+
+        ],
+        borderColor: '#2e303c7e',
+        borderWidth: 3,
+        hoverOffset: 4,
+      },
+    ],
+  };
+
+
   function porcentPopulation(gender, numbersPopulation: numbersProps) {
-    try {
-
-      if (gender === 'Masculino') {
-        return ((populationData[0] / total) * 100).toFixed(2)
-      } else {
-        return ((populationData[1] / total) * 100).toFixed(2)
-      }
-
-    } catch {
-      throw new Error('Erro de parametro na função');
+    if (gender === 'Masculino') {
+      return ((populationData[0] / total) * 100).toFixed(2)
+    } else {
+      return ((populationData[1] / total) * 100).toFixed(2)
     }
   }
 
@@ -42,7 +54,10 @@ export function PopulationComponent({ countrie }) {
 
       <div>
         <div className={styles.ChartPopulationContainer}>
-          <ChartBar population={populationData} />
+
+          <div className={styles.chart}>
+            <Doughnut data={dataChart} />
+          </div>
 
         </div>
 
@@ -51,7 +66,9 @@ export function PopulationComponent({ countrie }) {
             countrie.searches.population.map(data => (
               <div key={data.gender} className={styles.genderItem}>
                 <div> <a style={{ backgroundColor: data.color }}></a> {data.gender}</div>
-                <p>{data.amount}</p>
+
+                <p>{(data.amount / 1000000).toFixed(2)} Milhões</p>
+
                 <span>{porcentPopulation(data.gender, numbersPopulation)} %</span>
 
               </div>

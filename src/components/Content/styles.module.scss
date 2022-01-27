@@ -7,18 +7,20 @@
   .content {
     max-width: 700px;
     display: grid;
-    gap: 30px;
+    gap: 16px;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr 1fr;
 
-    margin: 2rem 4rem;
+    margin: 2rem 2rem 16px  2rem;
   }
+  transition: animation 2s;
+  animation: ease-in-out 2s;
 
 }
 
 
 .tableContainer{
-  margin: 0 0 4rem 4rem;
+  margin: 0 0 2rem 2rem;
 
   width: 80%;
   height: 400px;
