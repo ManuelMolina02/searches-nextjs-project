@@ -38,7 +38,6 @@ export function AgeGroupChart({ countrie }) {
     ],
   };
 
-
   return (
 
     <div className={styles.exportationContainer}>
@@ -52,7 +51,6 @@ export function AgeGroupChart({ countrie }) {
           </div>
 
         </div>
-
 
       </div>
     </div>

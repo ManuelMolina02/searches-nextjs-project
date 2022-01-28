@@ -1,4 +1,4 @@
-import { countrieProps } from '../../types'
+import { countrieProps } from '../../../types'
 import styles from './styles.module.scss'
 
 

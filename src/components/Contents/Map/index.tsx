@@ -28,7 +28,6 @@ export function Map({ mapCoordinates }: MapProps) {
 
   }
 
-
   return (
     <div className={styles.MapContainer}>
 
@@ -47,12 +46,7 @@ export function Map({ mapCoordinates }: MapProps) {
 
           offsetTop={mapCoordinates.marker_position.setTop}
           offsetLeft={mapCoordinates.marker_position.setLeft}
-
-
-
         >
-          {/* <img src="/images/map-marker.svg" style={{ width: '26px' }} /> */}
-
 
         </Marker>
 

@@ -1,23 +1,30 @@
 import axios from "axios";
-import { Sidebar } from "../components/Sidebar/ index";
-import { GetServerSideProps } from 'next'
-import { Content } from "../components/Content";
 import { useState } from "react";
+import { GetServerSideProps } from 'next'
+import { countrieProps, countriesListProps } from '../types'
 
+import { Sidebar } from "../components/Sidebar/ index";
+import { Contents } from "../components/Contents";
 
-export default function Home({ countriesSearches }) {
-	const [countrieSelected, setCountrieSelected] = useState('025597')
+interface homeProps {
+	countries: countrieProps[],
+	list: countriesListProps[]
+}
 
-	function handleClickCountrie(id: string) {
-		console.log(id)
-		setCountrieSelected(id)
+export default function Home({ countries, list }: homeProps) {
+
+	const [countrieSelectedId, setCountrieSelectedId] = useState(25597)
+
+	function handleClickCountrie(id: number) {
+		setCountrieSelectedId(id)
 	}
 
+	const [countrie] = countries.filter(countrie => countrie.id === countrieSelectedId)
 
 	return (
 		< div >
-			<Sidebar countries={countriesSearches} countrieActive={handleClickCountrie} />
-			<Content countries={countriesSearches} countrieId={countrieSelected} />
+			<Sidebar countriesList={list} countrieActive={handleClickCountrie} />
+			<Contents countrieSelected={countrie} />
 		</div >
 	);
 }
@@ -26,17 +33,23 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 
 
-	const jsonData = await axios.get('https://manuelmolina02.github.io/Data/testData.json')
+	const countries = await axios.get('https://manuelmolina02.github.io/Data/testData.json')
 		.then(response => response.data)
 		.then(data => data);
 
 
-
+	const list = countries.map(countrie => {
+		return {
+			id: countrie.id,
+			name: countrie.name,
+			flag: countrie.url_flag
+		}
+	})
 
 	return {
 		props: {
-			countriesSearches: jsonData,
-
+			countries,
+			list
 		},
 
 	}

@@ -6,7 +6,7 @@
   overflow:hidden;
 
   border-radius: 8px 8px 0 0;
-  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.164);
+  box-shadow: var(--box-shadow);
 
   th,
   td {
@@ -19,7 +19,6 @@
   tr > td:first-child{
     width: 15%;
   }
-
 
   thead {
   	th {
@@ -46,16 +45,5 @@
   		}
   	}
   }
-
-
-    img{
-      width: 60px;
-      height: 40px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin: 0 15px;
-
-    }
-
 
 }

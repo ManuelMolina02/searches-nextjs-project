@@ -1,13 +1,11 @@
-import { ButtonHTMLAttributes } from 'react';
 import styles from './styles.module.scss'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
+  id: number,
   name: string,
   flag: string,
-  countrieActive: (id: string) => void
-
+  countrieActive: (id: number) => void
 }
-
 
 export function Button({ name, flag, countrieActive, id }: ButtonProps) {
 

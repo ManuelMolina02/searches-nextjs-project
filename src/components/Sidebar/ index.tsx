@@ -1,15 +1,14 @@
-import { Button } from '../Buttons';
-import { countrieProps } from '../../types';
+import { countriesListProps } from '../../types';
+import { Button } from './SidebarButtons';
 
 import styles from './styles.module.scss'
 
 interface sidebarProps {
-  countries: countrieProps[],
-  countrieActive: (id: string) => void
+  countriesList: countriesListProps[]
+  countrieActive: (id: number) => void
 }
 
-export function Sidebar({ countries, countrieActive }: sidebarProps) {
-
+export function Sidebar({ countriesList, countrieActive }: sidebarProps) {
   return (
     <>
       <nav className={styles.sidebarContainer}>
@@ -18,14 +17,14 @@ export function Sidebar({ countries, countrieActive }: sidebarProps) {
           <span>searches</span>
 
           {
-            countries.map(countrie => (
+            countriesList.map(countrie => (
               <Button
                 key={countrie.id}
                 name={countrie.name}
-                flag={countrie.url_flag}
+                flag={countrie.flag}
 
-                countrieActive={countrieActive}
                 id={countrie.id}
+                countrieActive={countrieActive}
               />
             ))
           }

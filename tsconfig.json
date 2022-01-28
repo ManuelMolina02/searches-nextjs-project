@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/AgeGroupChart/ChartBar.tsx"
+    "src/components/Contents/AgeGroupChart/ChartBar.tsx"
   ],
   "exclude": [
     "node_modules"
