@@ -2,8 +2,8 @@ import { countrieProps } from '../../types'
 
 import styles from './styles.module.scss'
 import { ProfileComponent } from './ProfileComponent'
-import { PopulationComponent } from './PopulationChart'
-import { AgeGroupChart } from './AgeGroupChart'
+import { ChartPopulation } from './ChartPopulation'
+import { ChartAgeGroup } from './ChartAgeGroup'
 import { Map } from './Map'
 import { ContentTable } from './DetailsTable'
 
@@ -23,8 +23,8 @@ export function Contents({ countrieSelected }: contentProps) {
       </div>
 
       <div className={styles.row}>
-        <PopulationComponent countrie={countrieSelected} />
-        <AgeGroupChart countrie={countrieSelected} />
+        <ChartPopulation countrie={countrieSelected} />
+        <ChartAgeGroup countrie={countrieSelected} />
       </div>
 
       <div className={styles.row}>

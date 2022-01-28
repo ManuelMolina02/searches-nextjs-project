@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 import { Doughnut } from "react-chartjs-2";
 
 
-export function PopulationComponent({ countrie }) {
+export function ChartPopulation({ countrie }) {
 
   interface numbersProps {
     total: number,

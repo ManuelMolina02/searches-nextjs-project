@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 import { Bar } from "react-chartjs-2";
 
-export function AgeGroupChart({ countrie }) {
+export function ChartAgeGroup({ countrie }) {
 
   const dataChart = {
     labels: [
