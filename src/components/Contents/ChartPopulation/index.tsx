@@ -1,52 +1,53 @@
 import ReactApexChart from 'react-apexcharts'
 import styles from './styles.module.scss'
 
-export default function ChartPopulation({ countrie }) {
+interface genderPopulationProps {
+  genderPopulation: [{
+    gender: string,
+    color: string,
+    etary_groups: [{
+      age_range: string,
+      amount: number
+    }]
+  }]
+}
 
-  const series = [32, 60]
+export default function ChartPopulation({ genderPopulation }: genderPopulationProps) {
+
+  let series = genderPopulation.map(serie => {
+    return serie.etary_groups.map(data => data.amount)
+      .reduce((acc, amount) => acc += amount)
+  })
+
+  let labels = genderPopulation.map(genders => genders.gender)
 
   return (
-
     <div className={styles.populationContainer}>
-      <h2>População por Gênero </h2>
+      <h2>População por Gênero</h2>
 
-      <div>
-        <div className={styles.ChartPopulationContainer}>
+      <div className={styles.ChartPopulationContainer}>
+        <ReactApexChart
+          options={{
+            chart: {
+              type: 'donut'
+            },
 
-          <ReactApexChart
-            options={{
-              chart: {
-
-                type: 'donut'
-              },
-              dataLabels: {
-                enabled: true
-              },
-
-              responsive: [{
-                breakpoint: 480,
-                options: {
-                  chart: {
-                    width: 200
-                  },
-                  legend: {
-                    show: true
-                  }
-                }
-              }],
-              legend: {
-                position: 'bottom',
-                offsetY: 0,
-                height: -20,
+            legend: {
+              position: 'bottom',
+              offsetY: 0,
+              height: -20,
+              labels: {
+                colors: 'white'
               }
-            }}
-            series={series}
-            type="donut"
-            width={340}
-          />
-        </div>
-
+            },
+            labels
+          }}
+          series={series}
+          type="donut"
+          width={340}
+        />
       </div>
+
     </div>
 
   )

@@ -1,15 +1,29 @@
 import ReactApexChart from 'react-apexcharts'
 import styles from './styles.module.scss'
 
-export default function ChartAgeGroup({ countrie }) {
-
-  const series = [{
-    name: 'PRODUCT A',
-    data: [44, 55, 41, 67, 22, 43]
-  }, {
-    name: 'PRODUCT B',
-    data: [13, 23, 20, 8, 13, 27]
+interface etaryGroupsChartProps {
+  genderPopulation: [{
+    gender: string,
+    color: string,
+    etary_groups: [{
+      age_range: string,
+      amount: number
+    }]
   }]
+}
+
+export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProps) {
+
+  function formatAmount(amount: number) {
+    return (((amount) / 100000).toFixed(1))
+  }
+
+  const series = genderPopulation.map(serie => {
+    return {
+      name: serie.gender,
+      data: serie.etary_groups.map(data => formatAmount(data.amount))
+    }
+  })
 
   return (
 
@@ -34,11 +48,17 @@ export default function ChartAgeGroup({ countrie }) {
                   borderRadius: 3
                 },
               },
+              tooltip: {
+                theme: 'dark'
+              },
 
               legend: {
                 position: 'bottom',
                 offsetY: 0,
                 offsetX: 0,
+                labels: {
+                  colors: 'white'
+                }
               },
               fill: {
                 opacity: 1
