@@ -2,24 +2,20 @@ import dynamic from 'next/dynamic';
 
 import { countrieProps } from '../../types'
 import { AboutCountrie } from './AboutCountrie';
+import { ChartEconomy } from './ChartsEconomy';
 import { ContentTable } from './DetailsTable';
 import styles from './styles.module.scss'
 
 const ChartAgeGroup = dynamic(() => import("./ChartAgeGroups"), { ssr: false })
 const BoxMap = dynamic(() => import("./BoxMap"), { ssr: false })
 const ChartPopulation = dynamic(() => import("./ChartPopulation"), { ssr: false })
-const ChartTree = dynamic(() => import("./ChartTree"), { ssr: false })
 
 interface contentProps {
   countrieSelected: countrieProps,
 }
 
 export function Contents({ countrieSelected }: contentProps) {
-  const defaultLocation = [41.3239751, -4.016104]
-  const center = [
-    countrieSelected.map_coordinate.latitude,
-    countrieSelected.map_coordinate.longitude
-  ]
+  let defaultLocation = [41.3239751, -4.016104]
 
   return (
     <div className={styles.container} >
@@ -27,13 +23,13 @@ export function Contents({ countrieSelected }: contentProps) {
       <div className={styles.column}>
         <div className={styles.row}>
           <AboutCountrie countrie={countrieSelected} />
-          <BoxMap location={center} />
+          <BoxMap defaultPosition={defaultLocation} location={[countrieSelected.map_coordinate.latitude, countrieSelected.map_coordinate.longitude]} />
 
         </div>
 
         <div className={styles.row}>
-          <ChartPopulation countrie={countrieSelected} />
-          <ChartAgeGroup countrie={countrieSelected} />
+          <ChartPopulation genderPopulation={countrieSelected.searches.population} />
+          <ChartAgeGroup genderPopulation={countrieSelected.searches.population} />
         </div>
 
         <div className={styles.row}>
@@ -43,8 +39,7 @@ export function Contents({ countrieSelected }: contentProps) {
       </div>
 
       <div className={styles.column}>
-        <ChartTree countrie={countrieSelected} />
-        <ChartTree countrie={countrieSelected} />
+        <ChartEconomy dataEconomy={countrieSelected.searches.economy} />
       </div>
 
 
