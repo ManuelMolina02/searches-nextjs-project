@@ -3,31 +3,28 @@ import { Circle, MapContainer } from "react-leaflet"
 import { CustomTileLayer } from "./customTileLayer"
 import styles from './styles.module.scss'
 
-const BoxMap = ({ location }) => {
+const BoxMap = ({ location, defaultPosition }) => {
 
-  const [map, setMap] = useState(null)
+  // let [map, setMap] = useState(null)
 
-  function handleSetView() {
-    if (map && location) {
-      map.flyTo(location, 4, {
-        duration: 3
-      })
-    }
-  }
+  // function handleSetView() {
+  //   if (map && location) {
+  //     map.flyTo(location, 4, {
+  //       duration: 3
+  //     })
+  //   }
+  // }
+  // useEffect(() => handleSetView, [location])
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => handleSetView, [location])
-
-  const fillBlueOptions = { fillColor: 'blue' }
 
   return (
     <div className={styles.MapContainer}>
       <MapContainer
         center={location}
-        whenCreated={map => setMap(map)}
+        // whenCreated={map => setMap(map)}
         style={{ width: 610, height: 460 }}
 
-        zoom={6}
+        zoom={4}
         minZoom={2}
         maxZoom={7}
 
@@ -35,11 +32,11 @@ const BoxMap = ({ location }) => {
         trackResize={true}
         doubleClickZoom={false}
         scrollWheelZoom={false}
-        zoomControl={false}
+        zoomControl={true}
       >
-
         <CustomTileLayer />
-        <Circle center={location} pathOptions={fillBlueOptions} radius={200000} />
+
+        <Circle center={location} pathOptions={{ fillColor: '#0285ff81' }} radius={400000} />
 
       </MapContainer>
     </div>
