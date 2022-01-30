@@ -15,7 +15,7 @@ interface etaryGroupsChartProps {
 export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProps) {
 
   function formatAmount(amount: number) {
-    return (((amount) / 100000).toFixed(1))
+    return (((amount) / 1000000).toFixed(2))
   }
 
   const series = genderPopulation.map(serie => {
