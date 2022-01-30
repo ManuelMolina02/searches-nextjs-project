@@ -15,12 +15,18 @@ interface genderPopulationProps {
 export default function ChartPopulation({ genderPopulation }: genderPopulationProps) {
 
   function formatSeries(series) {
-    return series.map(data => Number((data / 1000000).toFixed(3)))
+    return series.map(data => Number((data / 1000000).toFixed(2)))
   }
 
+
+
   let series = genderPopulation.map(serie => {
-    return serie.etary_groups.map(data => data.amount)
+    const data = serie.etary_groups.map(data => data.amount)
       .reduce((acc, amount) => acc += amount)
+
+    let formatData = Number((data / 1000000).toFixed(2))
+
+    return formatData
   })
 
   let labels = genderPopulation.map(genders => genders.gender)
@@ -48,25 +54,35 @@ export default function ChartPopulation({ genderPopulation }: genderPopulationPr
               pie: {
                 donut: {
                   labels: {
+
                     show: true,
                     name: {
                       color: 'white',
                     },
                     value: {
-                      color: 'white'
+                      color: 'white',
+                      formatter: function (val) {
+                        return val + " Mi"
+                      }
                     },
                     total: {
                       show: true,
                       fontSize: '22px',
-                      color: 'white'
+                      color: 'white',
+                      formatter: function (w) {
+                        return w.globals.seriesTotals.reduce((a, b) => {
+                          return a + b
+                        }, 0) + ' Mi'
+                      }
                     }
+
                   }
                 }
               }
             }
 
           }}
-          series={formatSeries(series)}
+          series={series}
           type="donut"
           width={340}
         />
