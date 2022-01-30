@@ -44,7 +44,6 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
 
               plotOptions: {
                 bar: {
-                  horizontal: false,
                   borderRadius: 3
                 },
               },
@@ -58,10 +57,31 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
                 offsetX: 0,
                 labels: {
                   colors: 'white'
+                },
+                itemMargin: {
+                  horizontal: 10,
+                  vertical: 5
                 }
               },
               fill: {
                 opacity: 1
+              },
+              dataLabels: {
+                enabled: true,
+                style: {
+                  colors: ['#16141490'],
+                  fontSize: '12px'
+
+                },
+                background: {
+                  dropShadow: {
+                    enabled: true,
+                    opacity: .1
+                  },
+                  enabled: true,
+                  borderWidth: 0,
+                  borderRadius: 2
+                }
               },
 
               xaxis: {
@@ -83,8 +103,8 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
             }}
             series={series}
             type="bar"
-            height={240}
             width={460}
+            height={300}
           />
 
         </div>

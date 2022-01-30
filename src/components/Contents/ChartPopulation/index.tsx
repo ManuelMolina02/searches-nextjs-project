@@ -14,12 +14,6 @@ interface genderPopulationProps {
 
 export default function ChartPopulation({ genderPopulation }: genderPopulationProps) {
 
-  function formatSeries(series) {
-    return series.map(data => Number((data / 1000000).toFixed(2)))
-  }
-
-
-
   let series = genderPopulation.map(serie => {
     const data = serie.etary_groups.map(data => data.amount)
       .reduce((acc, amount) => acc += amount)
@@ -39,20 +33,52 @@ export default function ChartPopulation({ genderPopulation }: genderPopulationPr
         <ReactApexChart
           options={{
             chart: {
-              type: 'donut'
+              type: 'pie',
             },
+            tooltip: {
+              enabled: false
+            },
+
+            labels,
             legend: {
               position: 'bottom',
               offsetY: 0,
               height: -20,
+              markers: {
+                radius: 2
+              },
+              itemMargin: {
+                horizontal: 10,
+                vertical: 5
+              },
               labels: {
-                colors: 'white'
+                colors: 'white',
               }
             },
-            labels,
+            dataLabels: {
+              enabled: true,
+              style: {
+                colors: ['#16141490'],
+                fontSize: '12px'
+
+              },
+              background: {
+                dropShadow: {
+                  enabled: true,
+                  opacity: .1
+                },
+                enabled: true,
+                borderWidth: 0,
+                borderRadius: 2
+              }
+            },
+            stroke: {
+              width: 0
+            },
             plotOptions: {
               pie: {
                 donut: {
+                  size: '58%',
                   labels: {
 
                     show: true,
@@ -84,7 +110,7 @@ export default function ChartPopulation({ genderPopulation }: genderPopulationPr
           }}
           series={series}
           type="donut"
-          width={340}
+          width={380}
         />
       </div>
 

@@ -5,23 +5,23 @@ import styles from './styles.module.scss'
 
 const BoxMap = ({ location, defaultPosition }) => {
 
-  // let [map, setMap] = useState(null)
+  let [map, setMap] = useState(null)
 
-  // function handleSetView() {
-  //   if (map && location) {
-  //     map.flyTo(location, 4, {
-  //       duration: 3
-  //     })
-  //   }
-  // }
-  // useEffect(() => handleSetView, [location])
+  function handleSetView() {
+    if (map && location) {
+      map.flyTo(location, 4, {
+        duration: 3
+      })
+    }
+  }
+  useEffect(() => handleSetView, [location])
 
 
   return (
     <div className={styles.MapContainer}>
       <MapContainer
         center={location}
-        // whenCreated={map => setMap(map)}
+        whenCreated={map => setMap(map)}
         style={{ width: 610, height: 460 }}
 
         zoom={4}
