@@ -37,8 +37,8 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
             options={{
               chart: {
                 stacked: true,
-                zoom: {
-                  enabled: false
+                toolbar: {
+                  show: false
                 }
               },
 
