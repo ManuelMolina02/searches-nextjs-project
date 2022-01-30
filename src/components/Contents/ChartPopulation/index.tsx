@@ -40,7 +40,8 @@ export default function ChartPopulation({ genderPopulation }: genderPopulationPr
                 colors: 'white'
               }
             },
-            labels
+            labels,
+
           }}
           series={series}
           type="donut"

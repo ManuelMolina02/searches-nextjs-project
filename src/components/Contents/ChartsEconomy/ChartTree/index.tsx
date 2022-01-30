@@ -25,14 +25,19 @@ export default function ChartTree({ detailsActivity }: chartTreeProps) {
     <div >
       <ReactApexChart
         options={{
+          chart: {
+            type: 'treemap'
+          },
           legend: {
-            show: false
+            show: true
           },
           tooltip: {
             theme: 'dark'
           },
-          chart: {
-            type: 'treemap'
+          plotOptions: {
+            treemap: {
+              distributed: true,
+            }
           }
         }}
         series={series}

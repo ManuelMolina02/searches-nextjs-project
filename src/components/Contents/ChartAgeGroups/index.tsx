@@ -62,6 +62,23 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
               },
               fill: {
                 opacity: 1
+              },
+
+              xaxis: {
+                type: 'category',
+                categories: ['0-14', '15-29', '30-49', '50-69', '70 +'],
+                labels: {
+                  style: {
+                    colors: 'white'
+                  }
+                }
+              },
+              yaxis: {
+                labels: {
+                  style: {
+                    colors: 'white'
+                  }
+                }
               }
             }}
             series={series}

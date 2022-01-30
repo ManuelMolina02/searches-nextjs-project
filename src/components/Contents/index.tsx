@@ -7,8 +7,8 @@ import { ContentTable } from './DetailsTable';
 import styles from './styles.module.scss'
 
 const ChartAgeGroup = dynamic(() => import("./ChartAgeGroups"), { ssr: false })
-const BoxMap = dynamic(() => import("./BoxMap"), { ssr: false })
 const ChartPopulation = dynamic(() => import("./ChartPopulation"), { ssr: false })
+const BoxMap = dynamic(() => import("./BoxMap"), { ssr: false })
 
 interface contentProps {
   countrieSelected: countrieProps,
@@ -41,8 +41,6 @@ export function Contents({ countrieSelected }: contentProps) {
       <div className={styles.column}>
         <ChartEconomy dataEconomy={countrieSelected.searches.economy} />
       </div>
-
-
     </div>
 
   )
