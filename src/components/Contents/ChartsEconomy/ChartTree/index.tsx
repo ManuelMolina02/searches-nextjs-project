@@ -12,44 +12,80 @@ interface chartTreeProps {
 
 export default function ChartTree({ detailsActivity }: chartTreeProps) {
 
-  let data = detailsActivity.map(data => {
-    return {
-      x: data.name,
-      y: data.value
-    }
-  })
+  const series = [{ data: detailsActivity.map(data => data.value) }]
 
-  const series = [{ data }]
+  const labels = detailsActivity.map(data => data.name)
 
   return (
-    <div >
-      <ReactApexChart
-        options={{
-          chart: {
-            type: 'treemap',
-            toolbar: {
-              show: false
-            }
+    <ReactApexChart
+      options={{
+        chart: {
+          type: 'bar',
+          toolbar: {
+            show: false
           },
-          legend: {
-            show: true
-          },
-          tooltip: {
-            theme: 'dark'
-          },
+          offsetX: -26,
+          offsetY: 18
+        },
+        grid: {
+          borderColor: 'transparent',
+        },
 
-          plotOptions: {
-            treemap: {
-              distributed: true,
-
-            }
+        plotOptions: {
+          bar: {
+            barHeight: '50%',
+            distributed: true,
+            horizontal: true,
+            dataLabels: {
+              position: 'bottom'
+            },
+            borderRadius: 12
           }
-        }}
-        series={series}
-        type="treemap"
-        width={360}
-        height={320}
-      />
-    </div>
+        },
+
+        dataLabels: {
+          enabled: false,
+        },
+
+        xaxis: {
+          categories: labels,
+          axisTicks: {
+            show: false
+          },
+
+          axisBorder: {
+            color: '#4b4b55'
+          },
+
+          labels: {
+            show: false
+          }
+        },
+
+        yaxis: {
+          labels: {
+            show: false
+          }
+        },
+
+        tooltip: {
+          enabled: false
+        },
+
+        legend: {
+          show: false,
+
+          labels: {
+            colors: '#e1e1e6',
+          }
+        }
+
+      }}
+      series={series}
+      type="bar"
+      width='200px'
+      height='375px'
+    />
+
   )
 }

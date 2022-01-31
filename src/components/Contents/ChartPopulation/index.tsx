@@ -52,7 +52,7 @@ export default function ChartPopulation({ genderPopulation }: genderPopulationPr
                 vertical: 5
               },
               labels: {
-                colors: 'white',
+                colors: '#e1e1e6',
               }
             },
             dataLabels: {
@@ -83,10 +83,10 @@ export default function ChartPopulation({ genderPopulation }: genderPopulationPr
 
                     show: true,
                     name: {
-                      color: 'white',
+                      color: '#e1e1e6',
                     },
                     value: {
-                      color: 'white',
+                      color: '#e1e1e6',
                       formatter: function (val) {
                         return val + " Mi"
                       }
@@ -94,7 +94,7 @@ export default function ChartPopulation({ genderPopulation }: genderPopulationPr
                     total: {
                       show: true,
                       fontSize: '22px',
-                      color: 'white',
+                      color: '#e1e1e6',
                       formatter: function (w) {
                         return w.globals.seriesTotals.reduce((a, b) => {
                           return a + b

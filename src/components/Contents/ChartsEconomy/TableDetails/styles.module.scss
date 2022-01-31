@@ -1,13 +1,23 @@
 .tableContainer{
-
-  width: 100%;
+  width: 260px;
   height: 370px;
-  
-  
-  overflow:hidden;
+
+  overflow: hidden;
 
   border-radius: 8px 8px 0 0;
   box-shadow: var(--box-shadow);
+  
+  tr > td {
+    font-size: 14px !important;
+
+    div {
+      margin: 0 auto;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      border-radius: 8px;
+    }
+  }
 
   th,
   td {
@@ -15,10 +25,6 @@
   	background-color: rgba(170, 170, 170, 0.075);
   	color: rgb(216, 216, 216);
     
-  }
-
-  tr > td:first-child{
-    width: 15%;
   }
 
   thead {
@@ -36,25 +42,23 @@
   }
 
   tbody {
-
   	tr {
       transition: background .2s;
       cursor: pointer;
-
   		&:hover {
   			background-color: rgba(255, 255, 255, 0.096);
   		}
 
       td {
         position: relative;
-        a{
+        
+        a {
           overflow: hidden;
-          width: 900px;
+          width: 200px;
           height: 100%;
+
           position: absolute;
-
           z-index: 10;
-
           left: 0;
           top: 0;          
         }

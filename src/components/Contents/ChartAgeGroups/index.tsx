@@ -41,14 +41,19 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
                   show: false
                 }
               },
+              grid: {
+                borderColor: '#4b4b55',
+              },
+
 
               plotOptions: {
                 bar: {
                   borderRadius: 3
                 },
+
               },
               tooltip: {
-                theme: 'dark'
+                theme: 'dark',
               },
 
               legend: {
@@ -56,7 +61,7 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
                 offsetY: 0,
                 offsetX: 0,
                 labels: {
-                  colors: 'white'
+                  colors: '#e1e1e6',
                 },
                 itemMargin: {
                   horizontal: 10,
@@ -89,21 +94,29 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
                 categories: ['0-14', '15-29', '30-49', '50-69', '70 +'],
                 labels: {
                   style: {
-                    colors: 'white'
-                  }
+                    colors: '#8a8a96',
+
+                  },
+                },
+                axisBorder: {
+                  color: '#4b4b55'
+                },
+                axisTicks: {
+                  color: '#4b4b55'
                 }
               },
               yaxis: {
                 labels: {
                   style: {
-                    colors: 'white'
+                    colors: '#8a8a96'
                   }
                 }
-              }
+              },
+
             }}
             series={series}
             type="bar"
-            width={460}
+            width={480}
             height={300}
           />
 

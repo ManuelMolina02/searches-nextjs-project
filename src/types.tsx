@@ -43,6 +43,7 @@ export interface countriesListProps {
 export interface economyCountrieProps {
   id_activity: number,
   name_activity: string,
+  colors: [],
   details: [{
     id: number,
     name: string,
