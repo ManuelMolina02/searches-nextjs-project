@@ -22,7 +22,7 @@ const BoxMap = ({ location, defaultPosition }) => {
       <MapContainer
         center={location}
         whenCreated={map => setMap(map)}
-        style={{ width: 610, height: 460 }}
+        style={{ width: 610, height: 450 }}
 
         zoom={4}
         minZoom={2}
