@@ -1,30 +1,18 @@
-import { memo, useEffect, useState } from "react"
-import { Circle, MapContainer } from "react-leaflet"
+import { MapContainer, GeoJSON } from "react-leaflet"
 import { CustomTileLayer } from "./customTileLayer"
 import styles from './styles.module.scss'
 
-const BoxMap = ({ location, defaultPosition }) => {
+const BoxMap = ({ id, geoJSON }) => {
 
-  let [map, setMap] = useState(null)
-
-  function handleSetView() {
-    if (map && location) {
-      map.flyTo(location, 4, {
-        duration: 3
-      })
-    }
-  }
-  useEffect(() => handleSetView, [location])
-
+  const dataCountrie = geoJSON.filter(data => data.id === id)
 
   return (
     <div className={styles.MapContainer}>
       <MapContainer
-        center={location}
-        whenCreated={map => setMap(map)}
-        style={{ width: 610, height: 450 }}
+        center={[-26.2612563, -60.466212]}
+        style={{ width: 620, height: 460 }}
 
-        zoom={4}
+        zoom={3}
         minZoom={2}
         maxZoom={7}
 
@@ -36,11 +24,19 @@ const BoxMap = ({ location, defaultPosition }) => {
       >
         <CustomTileLayer />
 
-        <Circle center={location} pathOptions={{ fillColor: '#0285ff81' }} radius={400000} />
+        <GeoJSON
+          key={id}
+          data={dataCountrie as any}
+
+          style={{
+            weight: 1.6,
+            fillOpacity: .3,
+          }}
+        />
 
       </MapContainer>
     </div>
   )
 }
 
-export default memo(BoxMap)
+export default BoxMap

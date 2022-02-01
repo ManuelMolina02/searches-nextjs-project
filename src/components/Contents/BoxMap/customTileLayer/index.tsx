@@ -4,7 +4,7 @@ export function CustomTileLayer() {
 
   const apiKey = 'pk.eyJ1IjoibWFudWVsbW9saW5hMiIsImEiOiJja2djbGc1cmMwMnJvMnJwNzJhMXVyaTE5In0.Yp3bxi5Yl5zfiGUQok193g'
   const userId = 'manuelmolina2'
-  const styledMap = 'ckyx0c39b001l14o84tkdahzp'
+  const styledMap = 'ckz3iba2b001a15nl5e8afl24'
 
   return apiKey ? (
     <TileLayer
