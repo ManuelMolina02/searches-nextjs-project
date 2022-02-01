@@ -15,7 +15,7 @@ export function AboutCountrie({ countrie }: aboutCountrieProps) {
         <img src={countrie.url_flag} alt="" />
 
         <h3>
-          {countrie.name} | {countrie.initials}
+          {countrie.name} | {countrie.iso_a2}
         </h3>
       </div>
 
