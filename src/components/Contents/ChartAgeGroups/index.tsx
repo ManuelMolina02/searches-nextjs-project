@@ -2,9 +2,9 @@ import ReactApexChart from 'react-apexcharts'
 import styles from './styles.module.scss'
 
 interface etaryGroupsChartProps {
+  id: number,
   genderPopulation: [{
     gender: string,
-    color: string,
     etary_groups: [{
       age_range: string,
       amount: number
@@ -12,7 +12,7 @@ interface etaryGroupsChartProps {
   }]
 }
 
-export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProps) {
+export default function ChartAgeGroup({ id, genderPopulation }: etaryGroupsChartProps) {
 
   function formatAmount(amount: number) {
     return (((amount) / 1000000).toFixed(2))
@@ -34,6 +34,7 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
         <div className={styles.ChartPopulationContainer}>
 
           <ReactApexChart
+            key={id}
             options={{
               chart: {
                 stacked: true,
@@ -41,19 +42,35 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
                   show: false
                 }
               },
+
               grid: {
                 borderColor: '#4b4b55',
               },
 
-
               plotOptions: {
                 bar: {
-                  borderRadius: 3
+                  borderRadius: 3,
+
                 },
 
               },
               tooltip: {
                 theme: 'dark',
+              },
+
+              dataLabels: {
+                style: {
+                  colors: ['white'],
+                  fontSize: '13px',
+                },
+                dropShadow: {
+                  enabled: true,
+                  color: '#0c0c20fa',
+                  left: 0,
+                  top: 0,
+                  opacity: 1,
+                  blur: 10
+                },
               },
 
               legend: {
@@ -63,6 +80,7 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
                 labels: {
                   colors: '#e1e1e6',
                 },
+
                 itemMargin: {
                   horizontal: 10,
                   vertical: 5
@@ -71,31 +89,30 @@ export default function ChartAgeGroup({ genderPopulation }: etaryGroupsChartProp
               fill: {
                 opacity: 1
               },
-              dataLabels: {
-                enabled: true,
-                style: {
-                  colors: ['#16141490'],
-                  fontSize: '12px'
+              // dataLabels: {
+              //   enabled: true,
+              //   style: {
+              //     colors: ['#16141490'],
+              //     fontSize: '12px'
 
-                },
-                background: {
-                  dropShadow: {
-                    enabled: true,
-                    opacity: .1
-                  },
-                  enabled: true,
-                  borderWidth: 0,
-                  borderRadius: 2
-                }
-              },
+              //   },
 
+              //   background: {
+              //     dropShadow: {
+              //       enabled: true,
+              //       opacity: .1
+              //     },
+              //     enabled: true,
+              //     borderWidth: 0,
+              //     borderRadius: 2
+              //   }
+              // },
               xaxis: {
                 type: 'category',
                 categories: ['0-14', '15-29', '30-49', '50-69', '70 +'],
                 labels: {
                   style: {
                     colors: '#8a8a96',
-
                   },
                 },
                 axisBorder: {

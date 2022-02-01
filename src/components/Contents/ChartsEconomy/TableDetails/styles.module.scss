@@ -2,8 +2,6 @@
   width: 260px;
   height: 370px;
 
-  overflow: hidden;
-
   border-radius: 8px 8px 0 0;
   box-shadow: var(--box-shadow);
   
@@ -23,8 +21,7 @@
   td {
   	padding: 8px 15px;
   	background-color: rgba(170, 170, 170, 0.075);
-  	color: rgb(216, 216, 216);
-    
+  	color: rgb(216, 216, 216); 
   }
 
   thead {
@@ -53,8 +50,7 @@
         position: relative;
         
         a {
-          overflow: hidden;
-          width: 200px;
+          width: 440px;
           height: 100%;
 
           position: absolute;

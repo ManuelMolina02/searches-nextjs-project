@@ -2,9 +2,9 @@ import ReactApexChart from 'react-apexcharts'
 import styles from './styles.module.scss'
 
 interface genderPopulationProps {
+  id: number,
   genderPopulation: [{
     gender: string,
-    color: string,
     etary_groups: [{
       age_range: string,
       amount: number
@@ -12,10 +12,10 @@ interface genderPopulationProps {
   }]
 }
 
-export default function ChartPopulation({ genderPopulation }: genderPopulationProps) {
+export default function ChartPopulation({ id, genderPopulation }: genderPopulationProps) {
 
   let series = genderPopulation.map(serie => {
-    const data = serie.etary_groups.map(data => data.amount)
+    let data = serie.etary_groups.map(data => data.amount)
       .reduce((acc, amount) => acc += amount)
 
     let formatData = Number((data / 1000000).toFixed(2))
@@ -31,12 +31,32 @@ export default function ChartPopulation({ genderPopulation }: genderPopulationPr
 
       <div className={styles.ChartPopulationContainer}>
         <ReactApexChart
+          key={id}
           options={{
             chart: {
               type: 'pie',
+              animations: {
+                easing: 'easeinout',
+                speed: 500
+              }
             },
+
             tooltip: {
               enabled: false
+            },
+            dataLabels: {
+              style: {
+                colors: ['white'],
+                fontSize: '13px',
+              },
+              dropShadow: {
+                enabled: true,
+                color: '#0c0c20fa',
+                left: 2,
+                top: 2,
+                opacity: 1,
+                blur: 10
+              }
             },
 
             labels,
@@ -53,23 +73,6 @@ export default function ChartPopulation({ genderPopulation }: genderPopulationPr
               },
               labels: {
                 colors: '#e1e1e6',
-              }
-            },
-            dataLabels: {
-              enabled: true,
-              style: {
-                colors: ['#16141490'],
-                fontSize: '12px'
-
-              },
-              background: {
-                dropShadow: {
-                  enabled: true,
-                  opacity: .1
-                },
-                enabled: true,
-                borderWidth: 0,
-                borderRadius: 2
               }
             },
             stroke: {
@@ -98,7 +101,7 @@ export default function ChartPopulation({ genderPopulation }: genderPopulationPr
                       formatter: function (w) {
                         return w.globals.seriesTotals.reduce((a, b) => {
                           return a + b
-                        }, 0) + ' Mi'
+                        }, 0).toFixed(2) + ' Mi'
                       }
                     }
 
