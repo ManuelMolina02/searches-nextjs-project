@@ -4,7 +4,7 @@ import { countrieProps } from '../../types'
 import { AboutCountrie } from './AboutCountrie';
 import { ChartEconomy } from './ChartsEconomy';
 import { ContentTable } from './DetailsTable';
-import styles from './styles.module.scss'
+import styles from './content.module.scss'
 
 const ChartAgeGroup = dynamic(() => import("./ChartAgeGroups"), { ssr: false })
 const ChartPopulation = dynamic(() => import("./ChartPopulation"), { ssr: false })
@@ -35,7 +35,6 @@ export function Contents({ countrieSelected, geoJSON }: contentProps) {
 
         <div className={styles.row}>
           <ContentTable dataEconomy={countrieSelected.searches.economy} />
-
         </div>
       </div>
 

@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { GetServerSideProps } from 'next';
 import { useState } from 'react';
-import { Contents } from '../components/Contents';
-import { Sidebar } from '../components/Sidebar/ index';
+import { Contents } from '../components/Contents/Content';
+import { Sidebar } from '../components/Sidebar/Sidebar';
 
 
 export default function Home({ countries, list, getJSON }) {

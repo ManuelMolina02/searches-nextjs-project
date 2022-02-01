@@ -10,8 +10,7 @@
   margin: 1rem 1rem 1rem 21rem; 
 
   .column{
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 20px
   }
   
@@ -19,5 +18,11 @@
     display: flex;
     gap: 20px;
   }
+}
 
+
+@media (max-width: 1800px) {
+  .container {
+    flex-direction: column;
+  }
 }

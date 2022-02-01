@@ -9,7 +9,7 @@ interface tableProps {
 export function ContentTable({ dataEconomy }: tableProps) {
   return (
 
-    <div className={styles.testDiv}>
+    <div className={styles.detailsTableContainer}>
       {
         dataEconomy.map(data => (
           <div key={data.id_activity}>
