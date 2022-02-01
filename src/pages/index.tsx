@@ -5,9 +5,9 @@ import { Contents } from '../components/Contents';
 import { Sidebar } from '../components/Sidebar/ index';
 
 
-export default function Home({ countries, list }) {
+export default function Home({ countries, list, getJSON }) {
 
-  const [countrieSelectedId, setCountrieSelectedId] = useState(25597)
+  const [countrieSelectedId, setCountrieSelectedId] = useState(25594)
 
   function handleClickCountrie(id: number) {
     setCountrieSelectedId(id)
@@ -19,7 +19,7 @@ export default function Home({ countries, list }) {
   return (
     <>
       <Sidebar countriesList={list} countrieActive={handleClickCountrie} />
-      <Contents countrieSelected={countrie} />
+      <Contents countrieSelected={countrie} geoJSON={getJSON} />
     </>
   );
 }
@@ -29,6 +29,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const countries = await axios.get('https://manuelmolina02.github.io/Data/testData.json')
     .then(response => response.data)
     .then(data => data)
+
+  const getJSON = await axios.get('https://manuelmolina02.github.io/Data/geometryCountries.json')
+    .then(response => response.data)
 
   const list = countries.map(countrie => {
     return {
@@ -41,7 +44,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
       countries,
-      list
+      list,
+      getJSON
     }
   }
 }

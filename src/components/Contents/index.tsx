@@ -12,10 +12,10 @@ const BoxMap = dynamic(() => import("./BoxMap"), { ssr: false })
 
 interface contentProps {
   countrieSelected: countrieProps,
+  geoJSON: [],
 }
 
-export function Contents({ countrieSelected }: contentProps) {
-  let defaultLocation = [41.3239751, -4.016104]
+export function Contents({ countrieSelected, geoJSON }: contentProps) {
 
   return (
     <div className={styles.container} >
@@ -23,13 +23,14 @@ export function Contents({ countrieSelected }: contentProps) {
       <div className={styles.column}>
         <div className={styles.row}>
           <AboutCountrie countrie={countrieSelected} />
-          <BoxMap defaultPosition={defaultLocation} location={[countrieSelected.map_coordinate.latitude, countrieSelected.map_coordinate.longitude]} />
+
+          <BoxMap id={countrieSelected.iso_a3} geoJSON={geoJSON} />
 
         </div>
 
         <div className={styles.row}>
-          <ChartPopulation genderPopulation={countrieSelected.searches.population} />
-          <ChartAgeGroup genderPopulation={countrieSelected.searches.population} />
+          <ChartPopulation id={countrieSelected.id} genderPopulation={countrieSelected.searches.population} />
+          <ChartAgeGroup id={countrieSelected.id} genderPopulation={countrieSelected.searches.population} />
         </div>
 
         <div className={styles.row}>

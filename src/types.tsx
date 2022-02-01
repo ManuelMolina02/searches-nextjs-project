@@ -2,20 +2,20 @@
 export interface countrieProps {
   id: number,
   name: string,
-  initials: string,
+  iso_a2: string,
+  iso_a3: string,
   capital: string,
   continent: string,
   ice_position: string,
   life_expectancy: number,
   health_expenditure_percap: number,
-  url_flag: string;
   map_coordinate: {
     latitude: number,
     longitude: number
   },
+  url_flag: string,
   searches: {
     population: [{
-      color: string,
       gender: string,
       etary_groups: [{
         age_range: string,
