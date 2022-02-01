@@ -67,17 +67,21 @@ export default function ChartPopulation({ id, genderPopulation }: genderPopulati
               markers: {
                 radius: 2
               },
+
               itemMargin: {
                 horizontal: 10,
                 vertical: 5
               },
+
               labels: {
                 colors: '#e1e1e6',
               }
             },
+
             stroke: {
               width: 0
             },
+
             plotOptions: {
               pie: {
                 donut: {
@@ -104,7 +108,6 @@ export default function ChartPopulation({ id, genderPopulation }: genderPopulati
                         }, 0).toFixed(2) + ' Mi'
                       }
                     }
-
                   }
                 }
               }

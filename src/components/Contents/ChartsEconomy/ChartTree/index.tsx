@@ -15,9 +15,11 @@ export default function ChartTree({ detailsActivity }: chartTreeProps) {
   const series = [{ data: detailsActivity.map(data => data.value) }]
 
   const labels = detailsActivity.map(data => data.name)
+  const id = detailsActivity.map(data => data.id)
 
   return (
     <ReactApexChart
+      key={id[0]}
       options={{
         chart: {
           type: 'bar',
