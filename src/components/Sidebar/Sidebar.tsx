@@ -1,11 +1,11 @@
-import { countriesListProps } from '../../services/types';
+import { sidebarListProps } from '../../services/types';
 import { Button } from './SidebarButtons/SidebarButtons';
 
 import styles from './sidebar.module.scss'
 import { FaGithub, FaLinkedin, FaRocket } from 'react-icons/fa'
 
 interface sidebarProps {
-  countriesList: countriesListProps[]
+  countriesList: sidebarListProps[]
   countrieActive: (id: number) => void
 }
 

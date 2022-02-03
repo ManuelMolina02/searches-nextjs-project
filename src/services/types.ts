@@ -1,4 +1,4 @@
-export interface countriesListProps {
+export interface sidebarListProps {
   id: number,
   name: string,
   flag: string

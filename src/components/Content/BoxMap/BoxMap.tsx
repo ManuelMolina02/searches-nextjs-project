@@ -13,7 +13,6 @@ interface boxMapProps {
 const BoxMap = ({ id, mapBoxData }: boxMapProps) => {
 
   const { mapUrl, dataGeoJson } = mapBoxData
-  console.log(dataGeoJson)
 
   const dataCountrie = dataGeoJson.filter(data => data.id === id)
   return (
