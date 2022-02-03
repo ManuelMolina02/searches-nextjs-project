@@ -1,4 +1,4 @@
-import styles from './styles.module.scss'
+import styles from './sidebarButtons.module.scss'
 
 interface ButtonProps {
   id: number,

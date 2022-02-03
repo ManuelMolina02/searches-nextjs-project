@@ -1,12 +1,11 @@
-import { countrieProps } from '../../../types'
-import styles from './styles.module.scss'
-
+import { countryProps } from '../../../services/types'
+import styles from './cardProfileCountrie.module.scss'
 
 interface aboutCountrieProps {
-  countrie: countrieProps
+  countrie: countryProps
 }
 
-export function AboutCountrie({ countrie }: aboutCountrieProps) {
+export function CardProfileCountrie({ countrie }: aboutCountrieProps) {
   return (
 
     <div className={styles.profileContainer}>

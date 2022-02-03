@@ -1,0 +1,68 @@
+.sidebarContainer {
+  width: 20rem;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: fixed;
+  padding-top: 2rem;
+
+  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+  background: #2e303c url("/images/background.svg") no-repeat 100% -12%;
+
+  span {
+    text-align: center;
+    margin-bottom: 5.4rem;
+    font-family: "Ubuntu";
+
+    font-size: 3rem;
+    color: var(--cyan-500);
+    letter-spacing: 6px;
+  }
+
+  .sidebarContent {
+    width: 70%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebarFooter {
+    position: fixed;
+    bottom: 0;
+
+    display: grid;
+    justify-content: center;
+    width: 20rem;
+
+    p {
+      font-size: 14px;
+      color: var(--gray-300);
+    }
+
+    div {
+      justify-content: center;
+      display: flex;
+      gap: 14px;
+      padding: 14px;
+    }
+
+    a {
+      svg {
+        width: 26px;
+        height: 26px;
+        color: rgb(154, 154, 165);
+        transition: filter 0.2s;
+      }
+
+      &:hover {
+        svg {
+          filter: brightness(0.6);
+        }
+      }
+    }
+  }
+}

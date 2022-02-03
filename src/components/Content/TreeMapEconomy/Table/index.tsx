@@ -1,6 +1,12 @@
+
+import { detailsEconomyProps } from '../../../../services/types'
 import styles from './styles.module.scss'
 
-export function Table({ details }) {
+interface tableProps {
+  details: detailsEconomyProps[]
+}
+
+export function Table({ details }: tableProps) {
   return (
     <table className={styles.tableContainer}>
 
@@ -19,7 +25,7 @@ export function Table({ details }) {
             <tr key={data.id} >
               <td>{data.id}<a href={data.reference} target="_blank"></a></td>
               <td>{data.name}</td>
-              <td>{data.value} - {data.unit}</td>
+              <td>{data.value} </td>
               <td>Acessar Conteúdo</td>
             </tr>
           ))

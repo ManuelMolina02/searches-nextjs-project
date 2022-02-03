@@ -1,8 +1,11 @@
-import styles from './styles.module.scss'
+import { detailsEconomyProps } from '../../../../services/types'
+import styles from './tableDetailsEconomy.module.scss'
 
+interface TableDetailsEconomyProps {
+  details: detailsEconomyProps[]
+}
 
-export function Table({ details }) {
-
+export function TableDetailsEconomy({ details }: TableDetailsEconomyProps) {
   return (
     <table className={styles.tableContainer}>
 
@@ -14,6 +17,7 @@ export function Table({ details }) {
       </thead>
 
       <tbody>
+
         {
           details.map(data => (
             <tr key={data.id} >

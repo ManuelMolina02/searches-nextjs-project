@@ -1,21 +1,21 @@
 .buttonContainer {
   display: flex;
-  align-items: center;  
+  align-items: center;
   padding: 10px;
-  
+
   letter-spacing: 2px;
   font-size: 1.125rem;
-  
+
   background-color: #373945;
-  opacity: .8;
-  
+  opacity: 0.8;
+
   border-radius: 0.25rem;
   border: 0;
   transition: background 200ms;
 
   color: var(--white);
 
-  img{
+  img {
     width: 36px;
     height: 28px;
     object-fit: cover;
@@ -23,16 +23,11 @@
     margin-right: 15px;
   }
 
-  &  + button {
+  & + button {
     margin-top: 15px;
   }
 
-  &:hover{
-    background-color: #4B4D59;
-  }
-
-  &.selected {
-    background: red;
-    color: yellowgreen;
+  &:hover {
+    background-color: #4b4d59;
   }
 }

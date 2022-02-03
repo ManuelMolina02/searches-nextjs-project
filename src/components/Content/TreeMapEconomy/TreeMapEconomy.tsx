@@ -1,12 +1,12 @@
-import { economyCountrieProps } from '../../../types'
-import styles from './styles.module.scss'
+import { economyProps } from '../../../services/types'
 import { Table } from './Table'
+import styles from './treeMapEconomy.module.scss'
 
-interface tableProps {
-  dataEconomy: economyCountrieProps[],
+interface TreeMapEconomyProps {
+  dataEconomy: economyProps[],
 }
 
-export function ContentTable({ dataEconomy }: tableProps) {
+export function TreeMapEconomy({ dataEconomy }: TreeMapEconomyProps) {
   return (
 
     <div className={styles.detailsTableContainer}>

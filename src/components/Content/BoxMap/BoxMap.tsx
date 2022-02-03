@@ -1,11 +1,21 @@
-import { MapContainer, GeoJSON } from "react-leaflet"
-import { CustomTileLayer } from "./customTileLayer"
-import styles from './styles.module.scss'
+import { MapContainer, GeoJSON, TileLayer } from "react-leaflet"
+import { geoJsonProps } from "../../../services/types"
+import styles from './boxMap.module.scss'
 
-const BoxMap = ({ id, geoJSON }) => {
+interface boxMapProps {
+  id: string,
+  mapBoxData: {
+    mapUrl: string,
+    dataGeoJson: geoJsonProps[]
+  }
+}
 
-  const dataCountrie = geoJSON.filter(data => data.id === id)
+const BoxMap = ({ id, mapBoxData }: boxMapProps) => {
 
+  const { mapUrl, dataGeoJson } = mapBoxData
+  console.log(dataGeoJson)
+
+  const dataCountrie = dataGeoJson.filter(data => data.id === id)
   return (
     <div className={styles.MapContainer}>
       <MapContainer
@@ -22,7 +32,9 @@ const BoxMap = ({ id, geoJSON }) => {
         scrollWheelZoom={false}
         zoomControl={true}
       >
-        <CustomTileLayer />
+        <TileLayer
+          url={mapUrl}
+        />
 
         <GeoJSON
           key={id}
