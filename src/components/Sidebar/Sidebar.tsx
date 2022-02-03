@@ -14,7 +14,7 @@ export function Sidebar({ countriesList, countrieActive }: sidebarProps) {
     <>
       <nav className={styles.sidebarContainer}>
 
-        <span>searches</span>
+        <span>south american <p>prism</p></span>
 
         <div className={styles.sidebarContent}>
 
@@ -45,9 +45,6 @@ export function Sidebar({ countriesList, countrieActive }: sidebarProps) {
               <FaLinkedin />
             </a>
 
-            <a href="https://app.rocketseat.com.br/me/manuel-angel-berger-molina-1586743760" target="_blank">
-              <FaRocket />
-            </a>
           </div>
         </div>
       </nav>
