@@ -1,5 +1,3 @@
-
-
 <h1 align="center">
    South America Prism | Desenvolvimento Pessoal
 </h1>
@@ -13,7 +11,7 @@
  Estou desenhando o layout através do Figma e você pode visualizar [clicando aqui](https://www.figma.com/file/9MydleVH9P9a8WDbxstUMZ/South-America-Prism?node-id=0%3A1)
 
  <h1 align="center">
-    <img alt="Simulador" title="Simulador" src="./public/monitorExample.svg" width="600px" height="340px" />
+    <img alt="monitor_example" title="monitor_example" src="./public/images/monitorExample.svg" width="380px"  />
 </h1>
 
 
@@ -42,6 +40,7 @@
 - Para instalar localmente, siga os passos abaixo:
 
 <br/>
+
 ```sh
 git clone https://github.com/ManuelMolina02/searches-nextjs-project.git
 ```
