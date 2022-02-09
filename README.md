@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+<h1 align="center">
+   South America Prism | Desenvolvimento Pessoal
+</h1>
 
-```bash
-npm run dev
-# or
-yarn dev
+<br/>
+
+## 💻 Projeto
+ Estou fazendo esse projeto com o intuito aprimorar alguns conhecimentos adquiridos nos últimos meses de estudo, esta aplicação é uma SPA (Single Page Application) que oferece um prisma econômico, social e territorial de 10 países da América Latina. A proposta é trazer uma análise de fácil compreensão, interativa e com alguns níveis de detalhamento nos dados apresentados.
+
+## 🔖 Layout
+ Estou desenhando o layout através do Figma e você pode visualizar [clicando aqui](https://www.figma.com/file/9MydleVH9P9a8WDbxstUMZ/South-America-Prism?node-id=0%3A1)
+
+ <h1 align="center">
+    <img alt="Simulador" title="Simulador" src="./public/img-simulador.png" width="600px" height="340px" />
+</h1>
+
+
+
+ ## 🚀 Tecnologias
+
+- [NextJS](https://nodejs.org/en/)
+- [ReactJS](https://reactjs.org)
+- [Typescript](https://www.typescriptlang.org/)
+- [Scss](https://sass-lang.com/)
+
+### 📡 Ferramentas Complementares
+
+- [Axios](https://axios-http.com/)
+- [Apex Charts](https://apexcharts.com/)
+- [Eslint](https://eslint.org/)
+- [Leaflet](https://leafletjs.com/)
+
+<br/>
+
+
+## 🤔 Como posso visualizar o projeto?
+
+- Para acessar o projeto online [clique aqui!](https://searches-nextjs-project.vercel.app/) 
+
+- Para instalar localmente, siga os passos abaixo:
+
+<br/>
+```sh
+git clone https://github.com/ManuelMolina02/searches-nextjs-project.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Após baixar o projeto, acesse o repositório via terminal e execute os seguintes comandos:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```sh
+npm install
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<br/>
+<br/>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Feito com 💜 por Manuel Molina 👋 Me contate através do [LinkedIn!](https://www.linkedin.com/in/manuel-angel-berger-molina-ba08b3174/)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
