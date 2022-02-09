@@ -13,7 +13,7 @@
  Estou desenhando o layout através do Figma e você pode visualizar [clicando aqui](https://www.figma.com/file/9MydleVH9P9a8WDbxstUMZ/South-America-Prism?node-id=0%3A1)
 
  <h1 align="center">
-    <img alt="Simulador" title="Simulador" src="./public/img-simulador.png" width="600px" height="340px" />
+    <img alt="Simulador" title="Simulador" src="./public/monitorExample.svg" width="600px" height="340px" />
 </h1>
 
 
