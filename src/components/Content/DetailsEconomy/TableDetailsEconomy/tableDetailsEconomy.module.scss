@@ -47,9 +47,7 @@
   	tr {
       transition: background .2s;
       cursor: pointer;
-  		&:hover {
-  			background-color: rgba(255, 255, 255, 0.096);
-  		}
+
 
       td {
         position: relative;

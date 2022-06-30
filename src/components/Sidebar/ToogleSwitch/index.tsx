@@ -7,10 +7,10 @@ export function ToogleSwitchTheme({ theme, action }) {
       <div
         className={styles.toggleSwitch}
         onClick={() => action()}
-        style={{ backgroundColor: theme === 'dark' ? '#d8dbe0' : '#28292c' }}
+        style={{ backgroundColor: theme === 'dark' ? '#28292c' : '#d8dbe0' }}
       >
 
-        <Svg stylings={{ left: theme === 'dark' ? '0px' : '12px' }} />
+        <Svg stylings={{ left: theme === 'dark' ? '0px' : '8px' }} />
 
 
       </div>

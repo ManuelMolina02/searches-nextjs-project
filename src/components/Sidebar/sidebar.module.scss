@@ -1,24 +1,29 @@
 .sidebarContainer {
-  width: 19rem;
+  width: 300px;
   height: 100vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.6rem;
-
-  padding-top: 2rem;
+  gap: 1.8rem;
 
   box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
-  background:  url("/images/background.svg") no-repeat 100% -18%;
+ // background:  url("/images/background.svg") no-repeat 100% -18%;
 
+ > img { 
+  position: absolute; 
+  width: 300.6px; 
+  height: 180px; 
+  object-fit: cover 
+}
 
   transition: background 0.3s ease-in-out;
 
   span {
     text-align: center;
-    margin: 0 1rem;
+    margin: 2.6rem 1rem ;
     font-family: "Ubuntu";
+
 
     font-size: 1.8rem;
     color: #cbd3ffb9;
@@ -60,7 +65,6 @@
       svg {
         width: 26px;
         height: 26px;
-        color: rgb(154, 154, 165);
         transition: filter 0.2s;
       }
 

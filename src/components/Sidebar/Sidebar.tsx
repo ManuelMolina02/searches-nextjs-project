@@ -2,7 +2,7 @@ import { sidebarListProps } from '../../services/types';
 import { Button } from './SidebarButtons/SidebarButtons';
 
 import styles from './sidebar.module.scss'
-import { FaGithub, FaLinkedin, FaRocket } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { useTheme } from '../../contexts/theme';
 import { ToogleSwitchTheme } from './ToogleSwitch';
 
@@ -37,7 +37,12 @@ export function Sidebar({ countriesList, countrieActive, colorsTheme }: sidebarP
     <>
       <nav className={styles.sidebarContainer} style={{ backgroundColor: colorsTheme.bgTertiary }}>
 
-        <span>south american <p>prism</p></span>
+        <img src="/images/background1.svg" alt="" />
+
+
+        <span style={{ position: 'relative' }}>
+          south america <p>prism</p>
+        </span>
 
         <ToogleSwitchTheme theme={theme.name} action={toogleTheme} />
 
@@ -60,21 +65,23 @@ export function Sidebar({ countriesList, countrieActive, colorsTheme }: sidebarP
         </div>
 
         <div className={styles.sidebarFooter} style={{ color: colorsTheme.color }}>
-          <p>© 2022 Developed by Manuel Molina</p>
+          <p>© 2022 Developed by <strong>Manuel Molina</strong></p>
 
           <div>
             <a href="https://github.com/ManuelMolina02" target="_blank">
-              <FaGithub />
+              <FaGithub color={theme.neutralColor} />
             </a>
 
             <a href="https://www.linkedin.com/in/manuel-angel-berger-molina-ba08b3174/" target="_blank">
-              <FaLinkedin />
+              <FaLinkedin color={theme.neutralColor} />
             </a>
 
 
 
           </div>
         </div>
+
+
       </nav>
     </>
   )
