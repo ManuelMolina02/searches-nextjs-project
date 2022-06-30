@@ -1,3 +1,4 @@
+import { useTheme } from '../../../../contexts/theme'
 import { detailsEconomyProps } from '../../../../services/types'
 import styles from './tableDetailsEconomy.module.scss'
 
@@ -6,6 +7,9 @@ interface TableDetailsEconomyProps {
 }
 
 export function TableDetailsEconomy({ details }: TableDetailsEconomyProps) {
+  const { theme } = useTheme()
+
+
   return (
     <table className={styles.tableContainer}>
 
@@ -20,7 +24,7 @@ export function TableDetailsEconomy({ details }: TableDetailsEconomyProps) {
 
         {
           details.map(data => (
-            <tr key={data.id} >
+            <tr key={data.id} style={{ color: theme.color }}  >
               <td>{data.name} <a href={data.reference} target="_blank" /></td>
               <td>$ {data.value} Bilhões</td>
             </tr>

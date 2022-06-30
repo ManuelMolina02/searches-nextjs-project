@@ -1,6 +1,6 @@
 .economyContainer{
   width: 500px;
-  height: 480px;
+  height: 474px;
   padding: 20px 10px 20px 40px;
 
   display: flex;
@@ -8,9 +8,9 @@
   align-items: center;
   justify-content: space-around;
 
-  background: var(--grayCyan-800);
   box-shadow: var(--box-shadow);
   border-radius: 8px;
+  transition: background 0.3s ease-in-out;
 
   h2 {
     font-size: 1.3rem;

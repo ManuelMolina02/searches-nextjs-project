@@ -1,14 +1,21 @@
+import { useTheme } from '../../../contexts/theme'
 import { countryProps } from '../../../services/types'
 import styles from './cardProfileCountrie.module.scss'
 
 interface aboutCountrieProps {
-  countrie: countryProps
+  countrie: countryProps,
+  colorsTheme: {
+    bgPrimary: string,
+    bgSecondary: string,
+    color: string,
+  }
 }
 
-export function CardProfileCountrie({ countrie }: aboutCountrieProps) {
+export function CardProfileCountrie({ countrie, colorsTheme }: aboutCountrieProps) {
+
   return (
 
-    <div className={styles.profileContainer}>
+    <div className={styles.profileContainer} style={{ backgroundColor: colorsTheme.bgPrimary, color: colorsTheme.color }}>
 
       <div className={styles.profileBanner}>
         <img src={countrie.url_flag} alt="" />

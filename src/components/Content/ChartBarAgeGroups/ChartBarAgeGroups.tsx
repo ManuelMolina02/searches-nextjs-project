@@ -4,6 +4,11 @@ import styles from './chartBarAgeGroups.module.scss'
 
 interface chartBarAgeGroupsProps {
   id: number,
+  colorsTheme: {
+    bgPrimary: string,
+    bgSecondary: string,
+    color: string,
+  },
   genderPopulation: [{
     gender: string,
     etary_groups: [{
@@ -13,7 +18,7 @@ interface chartBarAgeGroupsProps {
   }]
 }
 
-export default function ChartBarAgeGroups({ id, genderPopulation }: chartBarAgeGroupsProps) {
+export default function ChartBarAgeGroups({ id, genderPopulation, colorsTheme }: chartBarAgeGroupsProps) {
 
   let totalPopulation = genderPopulation.map(data => data.etary_groups
     .map(data => data.amount)
@@ -42,7 +47,7 @@ export default function ChartBarAgeGroups({ id, genderPopulation }: chartBarAgeG
 
 
   return (
-    <div className={styles.exportationContainer}>
+    <div className={styles.exportationContainer} style={{ backgroundColor: colorsTheme.bgPrimary, color: colorsTheme.color }}>
       <h2>População por Faixa Etária</h2>
 
       <div>

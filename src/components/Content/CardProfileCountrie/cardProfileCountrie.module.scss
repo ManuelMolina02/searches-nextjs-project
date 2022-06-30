@@ -1,6 +1,6 @@
 .profileContainer {
     width: 240px;
-    height: 480px;
+    height: 100%;
 
     display: grid;
     align-items: center;
@@ -8,9 +8,10 @@
 
     padding: 2rem;
 
-    background: var(--grayCyan-800);
     box-shadow: var(--box-shadow);
     border-radius: 8px;
+
+    transition: all 0.3s ease-in-out;
 
     div > div {       
       margin-top: 6px;

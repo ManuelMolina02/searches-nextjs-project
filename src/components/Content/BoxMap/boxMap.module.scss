@@ -1,15 +1,16 @@
 .MapContainer {
-  width: 640px;
-  height: 480px;
+  width: 100%;
+  height: 100%;
   
   display: flex;
   align-items: center;
   justify-content: center;
   
-  background: var(--grayCyan-800);
   box-shadow: var(--box-shadow);
   border-radius: 8px;
-  
+
+  transition: background 0.3s ease-in-out;
+
   div {
     border-radius: 4px;
   }

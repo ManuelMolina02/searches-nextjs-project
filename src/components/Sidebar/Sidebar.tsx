@@ -3,18 +3,43 @@ import { Button } from './SidebarButtons/SidebarButtons';
 
 import styles from './sidebar.module.scss'
 import { FaGithub, FaLinkedin, FaRocket } from 'react-icons/fa'
+import { useTheme } from '../../contexts/theme';
+import { ToogleSwitchTheme } from './ToogleSwitch';
 
 interface sidebarProps {
-  countriesList: sidebarListProps[]
+  countriesList: sidebarListProps[],
+  colorsTheme: {
+    bgPrimary: string,
+    bgSecondary: string,
+    bgTertiary: string,
+
+    color: string,
+
+  },
   countrieActive: (id: number) => void
 }
 
-export function Sidebar({ countriesList, countrieActive }: sidebarProps) {
+export function Sidebar({ countriesList, countrieActive, colorsTheme }: sidebarProps) {
+
+  const { theme, variablesTheme } = useTheme()
+
+  function toogleTheme() {
+    if (theme.name === 'light') {
+      variablesTheme.setThemeSelected('dark')
+    } else {
+      variablesTheme.setThemeSelected('light')
+    }
+  }
+
+
+
   return (
     <>
-      <nav className={styles.sidebarContainer}>
+      <nav className={styles.sidebarContainer} style={{ backgroundColor: colorsTheme.bgTertiary }}>
 
         <span>south american <p>prism</p></span>
+
+        <ToogleSwitchTheme theme={theme.name} action={toogleTheme} />
 
         <div className={styles.sidebarContent}>
 
@@ -24,6 +49,7 @@ export function Sidebar({ countriesList, countrieActive }: sidebarProps) {
                 key={countrie.id}
                 name={countrie.name}
                 flag={countrie.flag}
+                colorsTheme={theme}
 
                 id={countrie.id}
                 countrieActive={countrieActive}
@@ -33,17 +59,19 @@ export function Sidebar({ countriesList, countrieActive }: sidebarProps) {
 
         </div>
 
-        <div className={styles.sidebarFooter}>
+        <div className={styles.sidebarFooter} style={{ color: colorsTheme.color }}>
           <p>© 2022 Developed by Manuel Molina</p>
 
           <div>
-            <a href="https://www.linkedin.com/in/manuel-angel-berger-molina-ba08b3174/" target="_blank">
+            <a href="https://github.com/ManuelMolina02" target="_blank">
               <FaGithub />
             </a>
 
-            <a href="https://github.com/ManuelMolina02" target="_blank">
+            <a href="https://www.linkedin.com/in/manuel-angel-berger-molina-ba08b3174/" target="_blank">
               <FaLinkedin />
             </a>
+
+
 
           </div>
         </div>

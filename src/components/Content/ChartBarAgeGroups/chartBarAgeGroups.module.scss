@@ -7,9 +7,9 @@
   text-align: center;
   justify-content: center;
 
-  background: var(--grayCyan-800);
   box-shadow: var(--box-shadow);
   border-radius: 8px;
+  transition: background 0.3s ease-in-out;
 
   h2 {
     font-size: 1.3rem;

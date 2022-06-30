@@ -4,19 +4,20 @@ import styles from './boxMap.module.scss'
 
 interface boxMapProps {
   id: string,
+  bg: string,
   mapBoxData: {
     mapUrl: string,
     dataGeoJson: geoJsonProps[]
   }
 }
 
-const BoxMap = ({ id, mapBoxData }: boxMapProps) => {
+const BoxMap = ({ id, mapBoxData, bg }: boxMapProps) => {
 
   const { mapUrl, dataGeoJson } = mapBoxData
 
   const dataCountrie = dataGeoJson.filter(data => data.id === id)
   return (
-    <div className={styles.MapContainer}>
+    <div className={styles.MapContainer} style={{ backgroundColor: bg }}>
       <MapContainer
         center={[-26.2612563, -60.466212]}
         style={{ width: 620, height: 460 }}

@@ -1,0 +1,23 @@
+.toggleSwitch {
+  width: 48px;
+  height: 32px;
+  border-radius: 50px;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+
+  position: relative;
+  top: 0px;
+  left: 102px;
+
+  transition: background .2s ease-in-out;
+
+  > div {
+    position: relative;
+    top: 2px;
+    transition: all .2s ease-in-out;
+  }
+}
+

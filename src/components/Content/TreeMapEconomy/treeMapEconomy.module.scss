@@ -7,13 +7,14 @@
   color: white;
   
   div {
-    background-color: var(--grayCyan-800);
+
     box-shadow: var(--box-shadow);
     border-radius: 8px;
     padding: 1rem;
 
     margin-bottom: 1rem;
-    
+    transition: background 0.3s ease-in-out;
+   
 
     p{
       text-align: center;

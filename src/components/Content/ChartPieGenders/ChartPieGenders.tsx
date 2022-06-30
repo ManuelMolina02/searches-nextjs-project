@@ -4,6 +4,11 @@ import styles from './chartPieGenders.module.scss'
 
 interface chartPieGendersProps {
   id: number,
+  colorsTheme: {
+    bgPrimary: string,
+    bgSecondary: string,
+    color: string,
+  },
   genderPopulation: [{
     gender: string,
     etary_groups: [{
@@ -13,7 +18,7 @@ interface chartPieGendersProps {
   }]
 }
 
-export default function ChartPieGenders({ id, genderPopulation }: chartPieGendersProps) {
+export default function ChartPieGenders({ id, genderPopulation, colorsTheme }: chartPieGendersProps) {
 
   let series = genderPopulation.map(serie => {
     let data = serie.etary_groups.map(data => data.amount)
@@ -25,7 +30,7 @@ export default function ChartPieGenders({ id, genderPopulation }: chartPieGender
   })
 
   return (
-    <div className={styles.chartPieContainer}>
+    <div className={styles.chartPieContainer} style={{ backgroundColor: colorsTheme.bgPrimary, color: colorsTheme.color }}>
       <h2>População por Gênero</h2>
 
       <div>

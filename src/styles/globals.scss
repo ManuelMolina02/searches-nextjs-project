@@ -17,11 +17,20 @@
   --grayCyan-300: #938eafd3;
   --grayCyan-800: #2e303c7e;
   --box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.164);
+
+
+  --light: #d8dbe0;
+  --dark: #28292c;
 }
 
 body {
+  width: 100%;
+  display: flex;
   background: #22212c;
   color: var(--white);
+
+  overflow: hidden;
+
 }
 
 body,
@@ -53,7 +62,36 @@ a {
   }
 }
 
-body {
-  width: 100%;
+.home {
   display: flex;
+  transition: background 0.3s ease-in-out;
 }
+
+ 
+ div {
+   
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #a5a5a823; 
+  border-radius: 10px;
+
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #22212c; 
+    border-radius: 10px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #29292e; 
+}
+
+ }

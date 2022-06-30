@@ -1,20 +1,23 @@
 .sidebarContainer {
-  width: 20rem;
-  height: 100%;
+  width: 19rem;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2.6rem;
 
-  position: fixed;
   padding-top: 2rem;
 
   box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
-  background: #2e303c url("/images/background.svg") no-repeat 100% -12%;
+  background:  url("/images/background.svg") no-repeat 100% -18%;
+
+
+  transition: background 0.3s ease-in-out;
 
   span {
     text-align: center;
-    margin: 0 1rem 5.4rem;
+    margin: 0 1rem;
     font-family: "Ubuntu";
 
     font-size: 1.8rem;
@@ -29,23 +32,21 @@
 
   .sidebarContent {
     width: 70%;
+    //height: 66%;
+    padding-right: 0.8rem;
+    overflow-y: scroll;
     margin: 0 auto;
-
     display: flex;
     flex-direction: column;
   }
 
   .sidebarFooter {
-    position: fixed;
-    bottom: 0;
-
     display: grid;
     justify-content: center;
     width: 20rem;
 
     p {
       font-size: 14px;
-      color: var(--gray-300);
     }
 
     div {

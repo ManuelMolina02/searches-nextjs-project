@@ -5,6 +5,7 @@ import { countryProps, geoJsonProps } from '../services/types';
 
 import { Contents } from '../components/Content/Content';
 import { Sidebar } from '../components/Sidebar/Sidebar';
+import { useTheme } from '../contexts/theme';
 
 export default function Home({ countries, mapData }) {
 
@@ -24,11 +25,13 @@ export default function Home({ countries, mapData }) {
     }
   })
 
+  const { theme } = useTheme()
+
   return (
-    <>
-      <Sidebar countriesList={sidebarList} countrieActive={handleClickCountrie} />
+    <div className='home' style={{ backgroundColor: theme.bgSecondary }}>
+      <Sidebar countriesList={sidebarList} countrieActive={handleClickCountrie} colorsTheme={theme} />
       <Contents countrieSelected={countrie} mapBoxData={mapData} />
-    </>
+    </div>
   );
 }
 

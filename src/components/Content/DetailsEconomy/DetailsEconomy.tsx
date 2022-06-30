@@ -7,16 +7,21 @@ import dynamic from 'next/dynamic'
 const ChartBarEconomy = dynamic(() => import("./ChartBarEconomy/ChartBarEconomy"), { ssr: false })
 
 interface chartTreeProps {
-  dataEconomy: economyProps[]
+  dataEconomy: economyProps[],
+  colorsTheme: {
+    bgPrimary: string,
+    bgSecondary: string,
+    color: string,
+  },
 }
 
-export function DetailsEconomy({ dataEconomy }: chartTreeProps) {
+export function DetailsEconomy({ dataEconomy, colorsTheme }: chartTreeProps) {
   return (
     <>
       {
         dataEconomy.map(data => (
           <div key={data.id_activity}>
-            <div className={styles.economyContainer}>
+            <div className={styles.economyContainer} style={{ backgroundColor: colorsTheme.bgPrimary, color: colorsTheme.color }}>
               <h2>5 Principais {data.name_activity} </h2>
 
               <div className={styles.economyContent}>
