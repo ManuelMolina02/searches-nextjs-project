@@ -75,4 +75,16 @@
       }
     }
   }
+
+    ::-webkit-scrollbar-track {
+      background: #ffffff7e;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #303049a1;
+      border-radius: 10px;
+    }
+  
+  
 }

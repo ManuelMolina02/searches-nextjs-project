@@ -5,8 +5,8 @@ import styles from './cardProfileCountrie.module.scss'
 interface aboutCountrieProps {
   countrie: countryProps,
   colorsTheme: {
-    bgPrimary: string,
-    bgSecondary: string,
+    bg100: string,
+    bg200: string,
     color: string,
   }
 }
@@ -15,7 +15,7 @@ export function CardProfileCountrie({ countrie, colorsTheme }: aboutCountrieProp
 
   return (
 
-    <div className={styles.profileContainer} style={{ backgroundColor: colorsTheme.bgPrimary, color: colorsTheme.color }}>
+    <div className={styles.profileContainer} style={{ backgroundColor: colorsTheme.bg100, color: colorsTheme.color }}>
 
       <div className={styles.profileBanner}>
         <img src={countrie.url_flag} alt="" />

@@ -2,9 +2,10 @@ export const themes = {
   theme: [
     {
       name: "dark",
-      bgPrimary: "#272c33",
-      bgSecondary: "#1f2729",
-      bgTertiary: "#2e303c",
+      bg100: "#272c33",
+      bg200: "#1f2729",
+      bg300: "#2E303C",
+      bg400: "#2E303C",
 
       neutralColor: "#ffffffcb",
       buttonColor: "#373945",
@@ -12,19 +13,23 @@ export const themes = {
       color: "#e5e5e5",
 
       bgHover: "#ffffff12",
+      tableLines: "#aaaaaa13",
     },
     {
       name: "light",
-      bgPrimary: "#e5e5e5",
-      bgSecondary: "#c6d0d3",
-      bgTertiary: "#bbbdc9",
+
+      bg100: "#e5e5e5",
+      bg200: "#c6d0d3",
+      bg300: "#bbbdc9",
+      bg400: "#898ea7",
 
       neutralColor: "#444d5a",
       buttonColor: "#82859d",
 
       color: "#4A5568",
 
-      bgHover: "#cdcdcd",
+      bgHover: "#d6d8e5",
+      tableLines: "#d8d8db",
     },
   ],
 };

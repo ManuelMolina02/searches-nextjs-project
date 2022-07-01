@@ -32,7 +32,7 @@ export function Contents({ countrieSelected, mapBoxData }: contentProps) {
 
         <div className={styles.row}>
           <CardProfileCountrie countrie={countrieSelected} colorsTheme={theme} />
-          <BoxMap id={countrieSelected.iso_a3} mapBoxData={mapBoxData} bg={theme.bgPrimary} />
+          <BoxMap id={countrieSelected.iso_a3} mapBoxData={mapBoxData} bg={theme.bg100} />
         </div>
 
         <div className={styles.row}>

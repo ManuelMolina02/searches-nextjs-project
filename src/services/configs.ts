@@ -5,7 +5,7 @@ export const ageGroupsChartOptions = {
   chart: {
     stacked: true,
     toolbar: {
-      show: false
+      show: false,
     },
   },
 
@@ -16,72 +16,68 @@ export const ageGroupsChartOptions = {
     },
   },
 
-  //Caixa de informativa
-  tooltip: {
-    theme: 'dark',
-    y: {
-      formatter: function (val) {
-        return 'Proporção de ' + Math.abs(val) + "%"
-      }
-    }
-  },
-
   //Caixa de dados (dentro do gráfico)
   dataLabels: {
     formatter: function (val) {
-      return Math.abs(Number(val)) + '%'
+      return Math.abs(Number(val)) + "%";
     },
 
     style: {
-      colors: ['white'],
-      fontSize: '13px',
+      colors: ["white"],
+      fontSize: "13px",
     },
 
     dropShadow: {
       enabled: true,
-      color: '#0c0c20fa',
+      color: "#0c0c20fa",
       left: 0,
       top: 0,
       opacity: 1,
-      blur: 10
+      blur: 10,
     },
   },
 
   //Legendas
   legend: {
-    position: 'bottom',
+    position: "bottom",
     offsetY: 0,
     offsetX: 0,
     labels: {
-      colors: '#e1e1e6',
+      colors: "#e1e1e6",
     },
 
     itemMargin: {
       horizontal: 10,
-      vertical: 5
-    }
+      vertical: 5,
+    },
   },
 
   //Cor interna do Gráfico
   fill: {
-    opacity: 1
+    opacity: 1,
   },
 
   //Eixos x, y e grid de linhas de fundo
   xaxis: {
-    type: 'category',
-    categories: ['0-14 anos', '15-29 anos', '30-49 anos', '50-69 anos', '+ 70 anos'],
+    type: "category",
+    categories: [
+      "0-14 anos",
+      "15-29 anos",
+      "30-49 anos",
+      "50-69 anos",
+      "+ 70 anos",
+    ],
     labels: {
       style: {
-        colors: '#8a8a96',
+        colors: "#8a8a96",
       },
     },
     axisBorder: {
-      color: '#4b4b55'
+      color: "#4b4b55",
     },
     axisTicks: {
-      color: '#4b4b55'
-    }
+      color: "#4b4b55",
+    },
   },
 
   yaxis: {
@@ -89,125 +85,127 @@ export const ageGroupsChartOptions = {
     max: 18,
     labels: {
       style: {
-        colors: '#8a8a96'
-      }
-    }
+        colors: "#8a8a96",
+      },
+    },
   },
 
   grid: {
-    borderColor: '#4b4b55',
+    borderColor: "#4b4b55",
   },
-
-}
+};
 
 export const genderPopulationChartOptions = {
   chart: {
-    type: 'pie',
+    type: "pie",
     animations: {
-      easing: 'easeinout',
-      speed: 500
-    }
+      easing: "easeinout",
+      speed: 500,
+    },
   },
 
   tooltip: {
-    enabled: false
+    enabled: false,
   },
 
   dataLabels: {
     style: {
-      colors: ['white'],
-      fontSize: '13px',
+      colors: ["white"],
+      fontSize: "13px",
     },
 
     dropShadow: {
       enabled: true,
-      color: '#0c0c20fa',
+      color: "#0c0c20fa",
       left: 2,
       top: 2,
       opacity: 1,
-      blur: 10
-    }
+      blur: 10,
+    },
   },
 
-  labels: ['Masculino', 'Feminino'],
+  labels: ["Masculino", "Feminino"],
 
   legend: {
-    position: 'bottom',
+    position: "bottom",
     offsetY: 0,
     height: -20,
     markers: {
-      radius: 2
+      radius: 2,
     },
 
     itemMargin: {
       horizontal: 10,
-      vertical: 5
+      vertical: 5,
     },
 
     labels: {
-      colors: '#e1e1e6',
-    }
+      colors: "#e1e1e6",
+    },
   },
 
   stroke: {
-    width: 0
+    width: 0,
   },
 
   plotOptions: {
     pie: {
       donut: {
-        size: '58%',
+        size: "58%",
         labels: {
-
           show: true,
           name: {
-            color: '#e1e1e6',
+            color: "#e1e1e6",
           },
           value: {
-            color: '#e1e1e6',
+            color: "#e1e1e6",
             formatter: function (val) {
-              return val + " Mi"
-            }
+              return val + " Mi";
+            },
           },
           total: {
             show: true,
-            fontSize: '22px',
-            color: '#e1e1e6',
+            fontSize: "22px",
+            color: "#e1e1e6",
             formatter: function (w) {
-              return w.globals.seriesTotals.reduce((a, b) => {
-                return a + b
-              }, 0).toFixed(2) + ' Mi'
-            }
-          }
-        }
-      }
-    }
-  }
-}
+              return (
+                w.globals.seriesTotals
+                  .reduce((a, b) => {
+                    return a + b;
+                  }, 0)
+                  .toFixed(2) + " Mi"
+              );
+            },
+          },
+        },
+      },
+    },
+  },
+};
 
 export const economyChartOptions = {
   chart: {
-    type: 'bar',
+    type: "bar",
     toolbar: {
-      show: false
+      show: false,
     },
     offsetX: -26,
-    offsetY: 18
+    offsetY: 18,
   },
   grid: {
-    borderColor: 'transparent',
+    borderColor: "transparent",
   },
 
   plotOptions: {
     bar: {
-      barHeight: '50%',
+      barHeight: "50%",
       distributed: true,
       horizontal: true,
       dataLabels: {
-        position: 'bottom'
+        position: "bottom",
       },
-      borderRadius: 12
-    }
+      borderRadius: 12,
+    },
   },
 
   dataLabels: {
@@ -216,20 +214,19 @@ export const economyChartOptions = {
 
   yaxis: {
     labels: {
-      show: false
-    }
+      show: false,
+    },
   },
 
   tooltip: {
-    enabled: false
+    enabled: false,
   },
 
   legend: {
     show: false,
 
     labels: {
-      colors: '#e1e1e6',
-    }
-  }
-
-}
+      colors: "#e1e1e6",
+    },
+  },
+};

@@ -9,14 +9,13 @@ interface TableDetailsEconomyProps {
 
 export function TableDetailsEconomy({ details }: TableDetailsEconomyProps) {
   const { theme } = useTheme()
-
   const [dataId, setDataId] = useState(0)
 
   return (
     <table className={styles.tableContainer}>
 
       <thead>
-        <tr>
+        <tr style={{ backgroundColor: theme.bg400 }}>
           <th>Nome</th>
           <th>Valor</th>
         </tr>
@@ -26,7 +25,7 @@ export function TableDetailsEconomy({ details }: TableDetailsEconomyProps) {
 
         {
           details.map(data => (
-            <tr key={data.id} style={{ color: theme.color, backgroundColor: dataId !== data.id ? '' : theme.bgHover }} onMouseEnter={() => setDataId(data.id)} onMouseLeave={() => setDataId(0)}>
+            <tr key={data.id} style={{ color: theme.color, backgroundColor: dataId !== data.id ? theme.tableLines : theme.bgHover }} onMouseEnter={() => setDataId(data.id)} onMouseLeave={() => setDataId(0)}>
               <td>{data.name} <a href={data.reference} target="_blank" /></td>
               <td>$ {data.value} Bilhões</td>
             </tr>

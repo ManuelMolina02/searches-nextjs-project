@@ -6,9 +6,9 @@ interface ButtonProps {
   flag: string,
   countrieActive: (id: number) => void,
   colorsTheme: {
-    bgPrimary: string,
-    bgSecondary: string,
-    bgTertiary: string,
+    bg100: string,
+    bg200: string,
+    bg300: string,
     color: string,
     buttonColor: string,
   }

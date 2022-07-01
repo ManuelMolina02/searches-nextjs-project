@@ -9,8 +9,8 @@ const ChartBarEconomy = dynamic(() => import("./ChartBarEconomy/ChartBarEconomy"
 interface chartTreeProps {
   dataEconomy: economyProps[],
   colorsTheme: {
-    bgPrimary: string,
-    bgSecondary: string,
+    bg100: string,
+    bg200: string,
     color: string,
   },
 }
@@ -21,7 +21,7 @@ export function DetailsEconomy({ dataEconomy, colorsTheme }: chartTreeProps) {
       {
         dataEconomy.map(data => (
           <div key={data.id_activity}>
-            <div className={styles.economyContainer} style={{ backgroundColor: colorsTheme.bgPrimary, color: colorsTheme.color }}>
+            <div className={styles.economyContainer} style={{ backgroundColor: colorsTheme.bg100, color: colorsTheme.color }}>
               <h2>5 Principais {data.name_activity} </h2>
 
               <div className={styles.economyContent}>

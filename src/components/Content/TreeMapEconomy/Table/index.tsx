@@ -17,7 +17,7 @@ export function Table({ details }: tableProps) {
     <table className={styles.tableContainer} >
 
       <thead>
-        <tr>
+        <tr style={{ backgroundColor: theme.bg400 }}>
           <th>ID</th>
           <th>Nome</th>
           <th>Valor</th>
@@ -28,7 +28,7 @@ export function Table({ details }: tableProps) {
       <tbody>
         {
           details.map(data => (
-            <tr key={data.id} style={{ color: theme.color, backgroundColor: dataId !== data.id ? '' : theme.bgHover }} onMouseEnter={() => setDataId(data.id)} onMouseLeave={() => setDataId(0)}>
+            <tr key={data.id} style={{ color: theme.color, backgroundColor: dataId !== data.id ? theme.tableLines : theme.bgHover }} onMouseEnter={() => setDataId(data.id)} onMouseLeave={() => setDataId(0)}>
               <td>{data.id}<a href={data.reference} target="_blank"></a></td>
               <td>{data.name}</td>
               <td>{data.value} </td>

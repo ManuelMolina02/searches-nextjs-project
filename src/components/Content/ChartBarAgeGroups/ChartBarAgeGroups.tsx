@@ -1,12 +1,14 @@
 import { ageGroupsChartOptions } from '../../../services/configs'
 import ReactApexChart from 'react-apexcharts'
 import styles from './chartBarAgeGroups.module.scss'
+import { themes } from '../../../styles/theme'
+import { useTheme } from '../../../contexts/theme'
 
 interface chartBarAgeGroupsProps {
   id: number,
   colorsTheme: {
-    bgPrimary: string,
-    bgSecondary: string,
+    bg100: string,
+    bg200: string,
     color: string,
   },
   genderPopulation: [{
@@ -19,6 +21,8 @@ interface chartBarAgeGroupsProps {
 }
 
 export default function ChartBarAgeGroups({ id, genderPopulation, colorsTheme }: chartBarAgeGroupsProps) {
+
+  const { theme } = useTheme()
 
   let totalPopulation = genderPopulation.map(data => data.etary_groups
     .map(data => data.amount)
@@ -45,9 +49,41 @@ export default function ChartBarAgeGroups({ id, genderPopulation, colorsTheme }:
     }
   })
 
+  const stylesChart = {
+    ...ageGroupsChartOptions,
+    legend: {
+      position: "bottom",
+      offsetY: 0,
+      height: -20,
+      markers: {
+        radius: 2,
+      },
+
+      itemMargin: {
+        horizontal: 10,
+        vertical: 5,
+      },
+
+      labels: {
+        colors: theme.color,
+      },
+    },
+    //Caixa de informativa
+    tooltip: {
+      theme: theme.name,
+      y: {
+        formatter: function (val) {
+          return "Proporção de " + Math.abs(val) + "%";
+        },
+      },
+    },
+
+
+  }
+
 
   return (
-    <div className={styles.exportationContainer} style={{ backgroundColor: colorsTheme.bgPrimary, color: colorsTheme.color }}>
+    <div className={styles.exportationContainer} style={{ backgroundColor: colorsTheme.bg100, color: colorsTheme.color }}>
       <h2>População por Faixa Etária</h2>
 
       <div>
@@ -60,7 +96,7 @@ export default function ChartBarAgeGroups({ id, genderPopulation, colorsTheme }:
 
             width={480}
             height={300}
-            options={ageGroupsChartOptions as any}
+            options={stylesChart as any}
           />
 
         </div>

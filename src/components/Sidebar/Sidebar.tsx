@@ -9,9 +9,9 @@ import { ToogleSwitchTheme } from './ToogleSwitch';
 interface sidebarProps {
   countriesList: sidebarListProps[],
   colorsTheme: {
-    bgPrimary: string,
-    bgSecondary: string,
-    bgTertiary: string,
+    bg100: string,
+    bg200: string,
+    bg300: string,
 
     color: string,
 
@@ -35,7 +35,7 @@ export function Sidebar({ countriesList, countrieActive, colorsTheme }: sidebarP
 
   return (
     <>
-      <nav className={styles.sidebarContainer} style={{ backgroundColor: colorsTheme.bgTertiary }}>
+      <nav className={styles.sidebarContainer} style={{ backgroundColor: colorsTheme.bg300 }}>
 
         <img src="/images/background1.svg" alt="" />
 

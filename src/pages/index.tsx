@@ -28,7 +28,7 @@ export default function Home({ countries, mapData }) {
   const { theme } = useTheme()
 
   return (
-    <div className='home' style={{ backgroundColor: theme.bgSecondary }}>
+    <div className='home' style={{ backgroundColor: theme.bg200 }}>
       <Sidebar countriesList={sidebarList} countrieActive={handleClickCountrie} colorsTheme={theme} />
       <Contents countrieSelected={countrie} mapBoxData={mapData} />
     </div>

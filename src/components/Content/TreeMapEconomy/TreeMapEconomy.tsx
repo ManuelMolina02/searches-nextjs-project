@@ -6,8 +6,8 @@ import styles from './treeMapEconomy.module.scss'
 interface TreeMapEconomyProps {
   dataEconomy: economyProps[],
   colorsTheme: {
-    bgPrimary: string,
-    bgSecondary: string,
+    bg100: string,
+    bg200: string,
     color: string,
   },
 }
@@ -18,7 +18,7 @@ export function TreeMapEconomy({ dataEconomy, colorsTheme }: TreeMapEconomyProps
     <div className={styles.detailsTableContainer} >
       {
         dataEconomy.map(data => (
-          <div key={data.id_activity} style={{ backgroundColor: colorsTheme.bgPrimary, color: colorsTheme.color }}>
+          <div key={data.id_activity} style={{ backgroundColor: colorsTheme.bg100, color: colorsTheme.color }}>
             <p>Principais {data.name_activity}</p>
 
             <Table details={data.details} />
@@ -27,6 +27,5 @@ export function TreeMapEconomy({ dataEconomy, colorsTheme }: TreeMapEconomyProps
         ))
       }
     </div>
-
   )
 }
