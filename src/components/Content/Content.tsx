@@ -1,5 +1,5 @@
 
-import { countryProps, geoJsonProps } from '../../services/types'
+import { countryProps, economyProps2, geoJsonProps } from '../../services/types'
 import { CardProfileCountrie } from './CardProfileCountrie/CardProfileCountrie';
 import { DetailsEconomy } from './DetailsEconomy/DetailsEconomy';
 import styles from './content.module.scss'
@@ -14,6 +14,7 @@ const TreeMapEconomy = dynamic(() => import("./TreeMapEconomy/TreeMapEconomy"), 
 
 interface contentProps {
   countrieSelected: countryProps,
+  economy: economyProps2,
 
   mapBoxData: {
     mapUrl: string,
@@ -21,9 +22,23 @@ interface contentProps {
   }
 }
 
-export function Contents({ countrieSelected, mapBoxData }: contentProps) {
+export function Contents({ countrieSelected, economy, mapBoxData }: contentProps) {
 
   const { theme } = useTheme()
+
+
+  const dataEconomy = [
+    {
+      id: '1',
+      name: 'imports',
+      detail: economy.imports.mainConsumers
+    },
+    {
+      name: 'exports',
+      detail: economy.exports.mainConsumers
+    }
+  ]
+
 
   return (
     <div className={styles.container} >
@@ -41,7 +56,7 @@ export function Contents({ countrieSelected, mapBoxData }: contentProps) {
         </div>
 
         <div className={styles.row}>
-          <TreeMapEconomy dataEconomy={countrieSelected.searches.economy} colorsTheme={theme} />
+          <TreeMapEconomy dataEconomy={dataEconomy} colorsTheme={theme} />
         </div>
       </div>
 

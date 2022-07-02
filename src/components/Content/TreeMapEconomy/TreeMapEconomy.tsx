@@ -1,11 +1,12 @@
 import ReactApexChart from 'react-apexcharts'
 import { economyProps } from '../../../services/types'
 import { themes } from '../../../styles/theme'
-import { Table } from './Table'
+//import  { Table } from './Table'
 import styles from './treeMapEconomy.module.scss'
 
 interface TreeMapEconomyProps {
-  dataEconomy: economyProps[],
+  //dataEconomy: economyProps[],
+  dataEconomy: economyConsumer[],
   colorsTheme: {
     bg100: string,
     bg200: string,
@@ -13,58 +14,10 @@ interface TreeMapEconomyProps {
   },
 }
 
+type economyConsumer = { name: string, detail: detailConsumer[] }
+type detailConsumer = { name: string, value: number }
+
 export default function TreeMapEconomy({ dataEconomy, colorsTheme }: TreeMapEconomyProps) {
-  /*
-   Object.values(data.details).map(data => {
-                    return {
-                      x: data.name,
-                      y: data.value
-                    }
-                  })
-
-                  [
-    {
-      data: [Object.values(data.details).map(data => {
-                    return {
-                      x: data.name,
-                      y: data.value
-                    }
-                  })
-
-      ]
-    }
-  ]
-  
-  */
-  const series = [
-    {
-      data: [
-        {
-          x: 'New Delhi',
-          y: 218
-        },
-        {
-          x: 'Kolkata',
-          y: 149
-        },
-        {
-          x: 'Mumbai',
-          y: 184
-        },
-        {
-          x: 'Ahmedabad',
-          y: 55
-        },
-        {
-          x: 'Bangaluru',
-          y: 84
-        },
-
-      ]
-    }
-  ]
-
-
 
   const options = {
     plotOptions: {
@@ -103,47 +56,34 @@ export default function TreeMapEconomy({ dataEconomy, colorsTheme }: TreeMapEcon
     }
   }
 
-
-
-
-
   return (
-
     <div className={styles.detailsTableContainer} >
       {
         dataEconomy.map(data => (
-          <div key={data.id_activity} style={{ backgroundColor: colorsTheme.bg100, color: colorsTheme.color }}>
-            <p>Principais {data.name_activity}</p>
-
-
-
-            {/*   <Table details={data.details} /> */}
+          <div key={data.name} style={{ backgroundColor: colorsTheme.bg100, color: colorsTheme.color }}>
+            <p>Principais Países de {data.name === 'imports' ? 'Importação' : 'Exportação'}</p>
+            {/*   <Table details={data.details} />   */}
 
             <div>
-
               <ReactApexChart
-                key={data.id_activity}
+                key={data.name}
                 type="treemap"
                 width={860}
                 height={320}
-
                 series={[
                   {
-                    data: [...Object.values(data.details).map(data => {
+                    data: [...Object.values(data.detail).map(data => {
                       return {
                         x: data.name,
                         y: data.value
                       }
                     })
-
                     ]
                   }
                 ]}
                 options={options as any}
               />
             </div>
-
-
           </div>
         ))
       }
