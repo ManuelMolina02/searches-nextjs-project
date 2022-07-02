@@ -42,13 +42,13 @@
   	tr {
       transition: background .2s;
       cursor: pointer;
-
   		&:hover {
   			background-color: rgba(255, 255, 255, 0.096);
   		}
 
       td {
         position: relative;
+        animation: fadeIn .5s ease-in-out;
 
         a{
           overflow: hidden;
@@ -66,3 +66,12 @@
 
 }
 
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

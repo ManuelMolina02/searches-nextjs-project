@@ -11,7 +11,7 @@
     box-shadow: var(--box-shadow);
     border-radius: 8px;
 
-    transition: all 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
 
     div > div {       
       margin-top: 6px;
@@ -29,6 +29,8 @@
       object-fit: cover;
       border-radius: 8px;
       box-shadow: var(--box-shadow);
+
+      animation: fadeIn .5s ease-in-out;
   
       margin-bottom: 1rem;    
     }
@@ -58,8 +60,20 @@
 
   h5, p {
     font-size: 1rem;
-  }    
+  }
+  
+  h5 {
+    animation: fadeIn .5s linear;
+  }
 
 }
 
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

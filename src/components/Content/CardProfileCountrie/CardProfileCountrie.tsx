@@ -18,14 +18,14 @@ export function CardProfileCountrie({ countrie, colorsTheme }: aboutCountrieProp
     <div className={styles.profileContainer} style={{ backgroundColor: colorsTheme.bg100, color: colorsTheme.color }}>
 
       <div className={styles.profileBanner}>
-        <img src={countrie.url_flag} alt="" />
+        <img key={countrie.id} src={countrie.url_flag} alt="" />
 
         <h3>
           {countrie.name} | {countrie.iso_a2}
         </h3>
       </div>
 
-      <div className={styles.profileContent}>
+      <div className={styles.profileContent} key={countrie.id}>
         <div className={styles.row}>
 
           <div>
