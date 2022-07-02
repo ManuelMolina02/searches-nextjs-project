@@ -1,7 +1,6 @@
 
 import { countryProps, geoJsonProps } from '../../services/types'
 import { CardProfileCountrie } from './CardProfileCountrie/CardProfileCountrie';
-import { TreeMapEconomy } from './TreeMapEconomy/TreeMapEconomy';
 import { DetailsEconomy } from './DetailsEconomy/DetailsEconomy';
 import styles from './content.module.scss'
 
@@ -11,6 +10,7 @@ import { useTheme } from '../../contexts/theme';
 const BoxMap = dynamic(() => import("./BoxMap/BoxMap"), { ssr: false })
 const ChartBarAgeGroups = dynamic(() => import("./ChartBarAgeGroups/ChartBarAgeGroups"), { ssr: false })
 const ChartPieGenders = dynamic(() => import("./ChartPieGenders/ChartPieGenders"), { ssr: false })
+const TreeMapEconomy = dynamic(() => import("./TreeMapEconomy/TreeMapEconomy"), { ssr: false })
 
 interface contentProps {
   countrieSelected: countryProps,
