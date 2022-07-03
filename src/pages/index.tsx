@@ -5,8 +5,8 @@ import { countryProps, economyProps2, geoJsonProps } from '../services/types';
 
 
 import { useTheme } from '../contexts/theme';
-import { Sidebar } from '../components/sidebar';
-import { Contents } from '../components/content';
+import { Sidebar } from '../components/Sidebar/Sidebar';
+import { Contents } from '../components/Content/Content';
 
 export default function Home({ countries, dataEconomy, mapData }) {
 
