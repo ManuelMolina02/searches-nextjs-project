@@ -1,8 +1,7 @@
-import { ageGroupsChartOptions } from '../../../services/configs'
 import ReactApexChart from 'react-apexcharts'
-import styles from './chartBarAgeGroups.module.scss'
-import { themes } from '../../../styles/theme'
+import { ageGroupsChartOptions } from '../../../services/configs'
 import { useTheme } from '../../../contexts/theme'
+import styles from './chartBarAgeGroups.module.scss'
 
 interface chartBarAgeGroupsProps {
   id: number,
@@ -11,6 +10,7 @@ interface chartBarAgeGroupsProps {
     bg200: string,
     color: string,
   },
+
   genderPopulation: [{
     gender: string,
     etary_groups: [{
@@ -20,7 +20,7 @@ interface chartBarAgeGroupsProps {
   }]
 }
 
-export default function ChartBarAgeGroups({ id, genderPopulation, colorsTheme }: chartBarAgeGroupsProps) {
+export default function ChartBarAgeGroups({ id, colorsTheme, genderPopulation }: chartBarAgeGroupsProps) {
 
   const { theme } = useTheme()
 
@@ -68,6 +68,7 @@ export default function ChartBarAgeGroups({ id, genderPopulation, colorsTheme }:
         colors: theme.color,
       },
     },
+
     //Caixa de informativa
     tooltip: {
       theme: theme.name,
@@ -77,8 +78,6 @@ export default function ChartBarAgeGroups({ id, genderPopulation, colorsTheme }:
         },
       },
     },
-
-
   }
 
 
@@ -88,7 +87,6 @@ export default function ChartBarAgeGroups({ id, genderPopulation, colorsTheme }:
 
       <div>
         <div className={styles.ChartPopulationContainer}>
-
           <ReactApexChart
             key={id}
             type="bar"

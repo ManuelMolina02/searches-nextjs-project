@@ -1,4 +1,3 @@
-import { useTheme } from '../../../contexts/theme'
 import { countryProps } from '../../../services/types'
 import styles from './cardProfileCountrie.module.scss'
 

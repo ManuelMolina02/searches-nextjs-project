@@ -3,8 +3,8 @@ import { GetServerSideProps } from 'next';
 import { api } from '../services/api';
 import { countryProps, economyProps2, geoJsonProps } from '../services/types';
 
-import { Contents } from '../components/Content/Content';
-import { Sidebar } from '../components/Sidebar/Sidebar';
+import { Contents } from '../components/content';
+import { Sidebar } from '../components/sidebar';
 import { useTheme } from '../contexts/theme';
 
 export default function Home({ countries, dataEconomy, mapData }) {
@@ -35,7 +35,7 @@ export default function Home({ countries, dataEconomy, mapData }) {
 
   return (
     <div className='home' style={{ backgroundColor: theme.bg200 }}>
-      <Sidebar countriesList={sidebarList} countrieActive={handleClickCountrie} colorsTheme={theme} />
+      <Sidebar countriesList={sidebarList} countrieActive={handleClickCountrie} colorsTheme={theme} selectedCountrie={selectedCountrie} />
       <Contents countrieSelected={countrie} mapBoxData={mapData} economy={economy} />
     </div>
   );

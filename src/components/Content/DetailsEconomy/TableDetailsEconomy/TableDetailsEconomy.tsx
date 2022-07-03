@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useTheme } from '../../../../contexts/theme'
 import { detailsEconomyProps } from '../../../../services/types'
 import styles from './tableDetailsEconomy.module.scss'

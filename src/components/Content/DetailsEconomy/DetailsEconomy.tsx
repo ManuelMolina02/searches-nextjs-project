@@ -3,7 +3,6 @@ import { TableDetailsEconomy } from './TableDetailsEconomy/TableDetailsEconomy'
 import styles from './detailsEconomy.module.scss'
 
 import dynamic from 'next/dynamic'
-
 const ChartBarEconomy = dynamic(() => import("./ChartBarEconomy/ChartBarEconomy"), { ssr: false })
 
 interface chartTreeProps {

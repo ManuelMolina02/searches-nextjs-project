@@ -9,10 +9,7 @@ export function ToogleSwitchTheme({ theme, action }) {
         onClick={() => action()}
         style={{ backgroundColor: theme === 'dark' ? '#28292c' : '#d8dbe0' }}
       >
-
         <Svg stylings={{ left: theme === 'dark' ? '0px' : '8px' }} />
-
-
       </div>
 
     </>

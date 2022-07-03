@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { MapContainer, GeoJSON, TileLayer } from "react-leaflet"
 import { geoJsonProps } from "../../../services/types"
 import styles from './boxMap.module.scss'
@@ -12,12 +11,11 @@ interface boxMapProps {
   }
 }
 
-const BoxMap = ({ id, mapBoxData, bg }: boxMapProps) => {
+const BoxMap = ({ id, bg, mapBoxData }: boxMapProps) => {
 
   const { mapUrl, dataGeoJson } = mapBoxData
-
-
   const dataCountrie = dataGeoJson.filter(data => data.id === id)
+
   return (
     <div className={styles.MapContainer} style={{ backgroundColor: bg }}>
       <MapContainer
@@ -39,9 +37,7 @@ const BoxMap = ({ id, mapBoxData, bg }: boxMapProps) => {
 
         <div className={styles.animation} key={id}>
           <GeoJSON
-
             data={dataCountrie as any}
-
 
             style={{
               weight: 1.6,

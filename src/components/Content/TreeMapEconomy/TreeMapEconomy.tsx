@@ -1,11 +1,7 @@
 import ReactApexChart from 'react-apexcharts'
-import { economyProps } from '../../../services/types'
-import { themes } from '../../../styles/theme'
-//import  { Table } from './Table'
 import styles from './treeMapEconomy.module.scss'
 
 interface TreeMapEconomyProps {
-  //dataEconomy: economyProps[],
   dataEconomy: economyConsumer[],
   colorsTheme: {
     bg100: string,

@@ -2,10 +2,10 @@
 import { countryProps, economyProps2, geoJsonProps } from '../../services/types'
 import { CardProfileCountrie } from './CardProfileCountrie/CardProfileCountrie';
 import { DetailsEconomy } from './DetailsEconomy/DetailsEconomy';
+import { useTheme } from '../../contexts/theme';
 import styles from './content.module.scss'
 
 import dynamic from 'next/dynamic';
-import { useTheme } from '../../contexts/theme';
 
 const BoxMap = dynamic(() => import("./BoxMap/BoxMap"), { ssr: false })
 const ChartBarAgeGroups = dynamic(() => import("./ChartBarAgeGroups/ChartBarAgeGroups"), { ssr: false })

@@ -1,10 +1,10 @@
 import { sidebarListProps } from '../../services/types';
 import { Button } from './SidebarButtons/SidebarButtons';
 
-import styles from './sidebar.module.scss'
+import { ToogleSwitchTheme } from './ToogleSwitch';
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { useTheme } from '../../contexts/theme';
-import { ToogleSwitchTheme } from './ToogleSwitch';
+import styles from './sidebar.module.scss'
 
 interface sidebarProps {
   countriesList: sidebarListProps[],
@@ -12,15 +12,13 @@ interface sidebarProps {
     bg100: string,
     bg200: string,
     bg300: string,
-
     color: string,
-
   },
-  countrieActive: (id: number) => void
+  countrieActive: (id: number) => void,
+  selectedCountrie: number,
 }
 
-export function Sidebar({ countriesList, countrieActive, colorsTheme }: sidebarProps) {
-
+export function Sidebar({ countriesList, countrieActive, colorsTheme, selectedCountrie }: sidebarProps) {
   const { theme, variablesTheme } = useTheme()
 
   function toogleTheme() {
@@ -30,8 +28,6 @@ export function Sidebar({ countriesList, countrieActive, colorsTheme }: sidebarP
       variablesTheme.setThemeSelected('light')
     }
   }
-
-
 
   return (
     <>
@@ -47,21 +43,16 @@ export function Sidebar({ countriesList, countrieActive, colorsTheme }: sidebarP
         <ToogleSwitchTheme theme={theme.name} action={toogleTheme} />
 
         <div className={styles.sidebarContent}>
-
           {
             countriesList.map(countrie => (
               <Button
-                key={countrie.id}
-                name={countrie.name}
-                flag={countrie.flag}
+                countrie={countrie}
                 colorsTheme={theme}
-
-                id={countrie.id}
                 countrieActive={countrieActive}
+                selectedCountrie={selectedCountrie}
               />
             ))
           }
-
         </div>
 
         <div className={styles.sidebarFooter} style={{ color: colorsTheme.color }}>
@@ -76,12 +67,8 @@ export function Sidebar({ countriesList, countrieActive, colorsTheme }: sidebarP
               <FaLinkedin color={theme.neutralColor} />
             </a>
 
-
-
           </div>
         </div>
-
-
       </nav>
     </>
   )

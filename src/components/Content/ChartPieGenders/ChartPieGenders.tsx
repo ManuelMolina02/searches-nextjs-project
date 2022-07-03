@@ -1,7 +1,7 @@
-import { genderPopulationChartOptions } from '../../../services/configs'
 import ReactApexChart from 'react-apexcharts'
-import styles from './chartPieGenders.module.scss'
+import { genderPopulationChartOptions } from '../../../services/configs'
 import { useTheme } from '../../../contexts/theme'
+import styles from './chartPieGenders.module.scss'
 
 interface chartPieGendersProps {
   id: number,
@@ -10,6 +10,7 @@ interface chartPieGendersProps {
     bg200: string,
     color: string,
   },
+
   genderPopulation: [{
     gender: string,
     etary_groups: [{
@@ -19,10 +20,9 @@ interface chartPieGendersProps {
   }]
 }
 
-export default function ChartPieGenders({ id, genderPopulation, colorsTheme }: chartPieGendersProps) {
+export default function ChartPieGenders({ id, colorsTheme, genderPopulation }: chartPieGendersProps) {
 
   const { theme } = useTheme()
-
 
   let series = genderPopulation.map(serie => {
     let data = serie.etary_groups.map(data => data.amount)

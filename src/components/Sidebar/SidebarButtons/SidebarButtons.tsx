@@ -1,31 +1,36 @@
 import styles from './sidebarButtons.module.scss'
 
 interface ButtonProps {
-  id: number,
-  name: string,
-  flag: string,
-  countrieActive: (id: number) => void,
+  countrie: {
+    id: number,
+    name: string,
+    flag: string,
+  },
   colorsTheme: {
     bg100: string,
-    bg200: string,
-    bg300: string,
     color: string,
     buttonColor: string,
+    neutralColor: string,
   }
+  countrieActive: (id: number) => void,
+  selectedCountrie: number,
 }
 
-export function Button({ id, name, flag, countrieActive, colorsTheme }: ButtonProps) {
+export function Button({ countrie, countrieActive, colorsTheme, selectedCountrie }: ButtonProps) {
+  const newStyle = countrie.id !== selectedCountrie
+    ? { backgroundColor: colorsTheme.buttonColor }
+    : { backgroundColor: colorsTheme.neutralColor, color: colorsTheme.bg100 }
 
   return (
     <button
       className={styles.buttonContainer}
       type="button"
-      onClick={() => countrieActive(id)}
-      style={{ backgroundColor: colorsTheme.buttonColor }}
+      style={newStyle}
+      onClick={() => countrieActive(countrie.id)}
 
     >
-      <img src={flag} alt="" />
-      {name}
+      <img src={countrie.flag} alt="" />
+      {countrie.name}
     </button>
   );
 }
