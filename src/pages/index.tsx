@@ -59,7 +59,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
       dataGeoJson,
       mapUrl
     }
-
     return {
       props: {
         countries,
