@@ -3,9 +3,10 @@ import { GetServerSideProps } from 'next';
 import { api } from '../services/api';
 import { countryProps, economyProps2, geoJsonProps } from '../services/types';
 
-import { Contents } from '../components/content';
-import { Sidebar } from '../components/sidebar';
+
 import { useTheme } from '../contexts/theme';
+import { Sidebar } from '../components/sidebar';
+import { Contents } from '../components/content';
 
 export default function Home({ countries, dataEconomy, mapData }) {
 
