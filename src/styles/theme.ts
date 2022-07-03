@@ -8,8 +8,8 @@ export const themes = {
       bg400: "#2E303C",
 
       neutralColor: "#ffffffcb",
-      buttonColor: "#373945",
-
+      btnColor: "#373945",
+      btnActiveColor: "#5b5e70",
       color: "#e5e5e5",
 
       bgHover: "#ffffff12",
@@ -24,8 +24,8 @@ export const themes = {
       bg400: "#898ea7",
 
       neutralColor: "#444d5a",
-      buttonColor: "#82859d",
-
+      btnColor: "#82859d",
+      btnActiveColor: "#5b5e70",
       color: "#4A5568",
 
       bgHover: "#d6d8e5",

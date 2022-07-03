@@ -9,8 +9,9 @@ interface ButtonProps {
   colorsTheme: {
     bg100: string,
     color: string,
-    buttonColor: string,
+    btnColor: string,
     neutralColor: string,
+    btnActiveColor: string,
   }
   countrieActive: (id: number) => void,
   selectedCountrie: number,
@@ -18,8 +19,8 @@ interface ButtonProps {
 
 export function Button({ countrie, countrieActive, colorsTheme, selectedCountrie }: ButtonProps) {
   const newStyle = countrie.id !== selectedCountrie
-    ? { backgroundColor: colorsTheme.buttonColor }
-    : { backgroundColor: colorsTheme.neutralColor, color: colorsTheme.bg100 }
+    ? { backgroundColor: colorsTheme.btnColor }
+    : { backgroundColor: colorsTheme.btnActiveColor }
 
   return (
     <button
