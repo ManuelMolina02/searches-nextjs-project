@@ -11,6 +11,8 @@
   overflow-y:scroll;
   overflow-x:scroll;
 
+  animation:fadeIn 1s linear ;
+
 
   .column{
     display: grid;
@@ -23,3 +25,41 @@
   }
 }
 
+.spinner{
+  width: 79vw;
+  height: 98vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  margin: 1rem; 
+
+  > svg {
+    width: 160px;
+    height: 160px;
+    animation: spin 1.5s linear infinite;
+    border-radius: 50%;  
+    opacity: .5;
+  }
+}
+
+
+@keyframes spin {
+  0% {
+
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  } 
+  100% {
+    opacity: 1;
+  }
+}

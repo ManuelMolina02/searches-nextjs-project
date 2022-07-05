@@ -5,7 +5,10 @@ import { DetailsEconomy } from './DetailsEconomy/DetailsEconomy';
 import { useTheme } from '../../contexts/theme';
 import styles from './content.module.scss'
 
+import { ImSpinner2 } from 'react-icons/im'
 import dynamic from 'next/dynamic';
+import { useState } from 'react';
+import Head from 'next/head';
 
 const BoxMap = dynamic(() => import("./BoxMap/BoxMap"), { ssr: false })
 const ChartBarAgeGroups = dynamic(() => import("./ChartBarAgeGroups/ChartBarAgeGroups"), { ssr: false })
@@ -25,6 +28,7 @@ interface contentProps {
 export function Contents({ countrieSelected, economy, mapBoxData }: contentProps) {
 
   const { theme } = useTheme()
+  const [isOpen, setIsOpen] = useState(false)
 
 
   const dataEconomy = [
@@ -39,31 +43,53 @@ export function Contents({ countrieSelected, economy, mapBoxData }: contentProps
     }
   ]
 
+  setTimeout(() => {
+    setIsOpen(true)
+  }, 750)
+
 
   return (
-    <div className={styles.container} >
+    <>
+      <Head>
+        <title>dash | south-america-prism</title>
+      </Head>
 
-      <div className={styles.column}>
+      {
+        !isOpen
+          ? (
+            <div className={styles.spinner} >
 
-        <div className={styles.row}>
-          <CardProfileCountrie countrie={countrieSelected} colorsTheme={theme} />
-          <BoxMap id={countrieSelected.iso_a3} mapBoxData={mapBoxData} bg={theme.bg100} />
-        </div>
+              <ImSpinner2 color={theme.color} />
 
-        <div className={styles.row}>
-          <ChartPieGenders id={countrieSelected.id} genderPopulation={countrieSelected.searches.population} colorsTheme={theme} />
-          <ChartBarAgeGroups id={countrieSelected.id} genderPopulation={countrieSelected.searches.population} colorsTheme={theme} />
-        </div>
+            </div>
+          ) :
+          (
+            <div className={styles.container} >
 
-        <div className={styles.row}>
-          <TreeMapEconomy dataEconomy={dataEconomy} colorsTheme={theme} />
-        </div>
-      </div>
 
-      <div className={styles.column} style={{ marginRight: '20px' }}>
-        <DetailsEconomy dataEconomy={countrieSelected.searches.economy} colorsTheme={theme} />
-      </div>
-    </div>
+              <div className={styles.column}>
+
+                <div className={styles.row}>
+                  <CardProfileCountrie countrie={countrieSelected} colorsTheme={theme} />
+                  <BoxMap id={countrieSelected.iso_a3} mapBoxData={mapBoxData} bg={theme.bg100} />
+                </div>
+
+                <div className={styles.row}>
+                  <ChartPieGenders id={countrieSelected.id} genderPopulation={countrieSelected.searches.population} colorsTheme={theme} />
+                  <ChartBarAgeGroups id={countrieSelected.id} genderPopulation={countrieSelected.searches.population} colorsTheme={theme} />
+                </div>
+
+                <div className={styles.row}>
+                  <TreeMapEconomy dataEconomy={dataEconomy} colorsTheme={theme} />
+                </div>
+              </div>
+
+              <div className={styles.column} style={{ marginRight: '20px' }}>
+                <DetailsEconomy dataEconomy={countrieSelected.searches.economy} colorsTheme={theme} />
+              </div>
+            </div>
+          )}
+    </>
 
   )
 }
