@@ -30,7 +30,7 @@ export function Button({ countrie, countrieActive, colorsTheme, selectedCountrie
       onClick={() => countrieActive(countrie.id)}
 
     >
-      <img src={countrie.flag} alt="" />
+      <img src={countrie.flag} alt="countrie flag" />
       {countrie.name}
     </button>
   );

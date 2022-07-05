@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 import { api } from '../services/api';
 import { countryProps, economyProps2, geoJsonProps } from '../services/types';
 
@@ -42,7 +42,7 @@ export default function Home({ countries, dataEconomy, mapData }) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
     const countries = await api.get<countryProps[]>('/countriesData.json')
       .then(response => response.data)
@@ -65,7 +65,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
         countries,
         dataEconomy,
         mapData,
-      }
+      },
+      revalidate: 60 * 60 * 24 * 7 // 1 week
     }
 
   } catch {
