@@ -39,7 +39,15 @@ Obs: github.io é um recurso gratuito que hospeda arquivos html, md, json, entre
 - [Leaflet](https://leafletjs.com/)
 - [Eslint](https://eslint.org/)
 
+
+## Outros Conteúdos 
+- [Dark/ Light Theme](https://apexcharts.com/)
+- [Github Io](https://leafletjs.com/)
+
 <br/>
+
+
+
 
 ## 🤔 Como posso visualizar o projeto?
 
