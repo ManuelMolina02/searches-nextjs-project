@@ -3,7 +3,7 @@ import { Button } from './SidebarButtons/SidebarButtons';
 
 import { ToogleSwitchTheme } from './ToogleSwitch';
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { useTheme } from '../../contexts/theme';
+import { useTheme } from '../../contexts/useTheme';
 import styles from './sidebar.module.scss'
 
 interface sidebarProps {

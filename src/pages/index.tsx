@@ -4,7 +4,7 @@ import { api } from '../services/api';
 import { countryProps, economyProps2, geoJsonProps } from '../services/types';
 
 
-import { useTheme } from '../contexts/theme';
+import { useTheme } from '../contexts/useTheme';
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { Contents } from '../components/Content/Content';
 

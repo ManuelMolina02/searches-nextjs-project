@@ -1,6 +1,6 @@
 import ReactApexChart from 'react-apexcharts'
 import { genderPopulationChartOptions } from '../../../services/configs'
-import { useTheme } from '../../../contexts/theme'
+import { useTheme } from '../../../contexts/useTheme'
 import styles from './chartPieGenders.module.scss'
 
 interface chartPieGendersProps {

@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { useTheme } from '../../../../contexts/theme'
+import { useTheme } from '../../../../contexts/useTheme'
 import { detailsEconomyProps } from '../../../../services/types'
 import styles from './styles.module.scss'
 

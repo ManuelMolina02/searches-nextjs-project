@@ -2,7 +2,7 @@
 import { countryProps, economyProps2, geoJsonProps } from '../../services/types'
 import { CardProfileCountrie } from './CardProfileCountrie/CardProfileCountrie';
 import { DetailsEconomy } from './DetailsEconomy/DetailsEconomy';
-import { useTheme } from '../../contexts/theme';
+import { useTheme } from '../../contexts/useTheme';
 import styles from './content.module.scss'
 
 import { ImSpinner2 } from 'react-icons/im'

@@ -53,4 +53,3 @@ export function useTheme() {
   const context = useContext(DefineThemeContext);
   return context
 }
-

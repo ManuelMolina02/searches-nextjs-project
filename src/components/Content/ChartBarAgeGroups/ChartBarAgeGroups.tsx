@@ -1,6 +1,6 @@
 import ReactApexChart from 'react-apexcharts'
 import { ageGroupsChartOptions } from '../../../services/configs'
-import { useTheme } from '../../../contexts/theme'
+import { useTheme } from '../../../contexts/useTheme'
 import styles from './chartBarAgeGroups.module.scss'
 
 interface chartBarAgeGroupsProps {

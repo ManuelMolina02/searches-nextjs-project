@@ -17,7 +17,6 @@ export const themes = {
     },
     {
       name: "light",
-
       bg100: "#e5e5e5",
       bg200: "#c6d0d3",
       bg300: "#bbbdc9",
