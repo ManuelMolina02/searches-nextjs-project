@@ -33,7 +33,7 @@ export function Sidebar({ countriesList, countrieActive, colorsTheme, selectedCo
     <>
       <nav className={styles.sidebarContainer} style={{ backgroundColor: colorsTheme.bg300 }}>
 
-        <img src="/images/background1.svg" alt="" />
+        <img src="/images/background.svg" alt="" />
 
 
         <span style={{ position: 'relative' }}>

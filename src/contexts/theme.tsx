@@ -19,11 +19,7 @@ export function DefineThemeProvider({ children }: DefineThemeProps) {
   useEffect(() => {
     let theme = localStorage.getItem('south-america-prism-theme');
 
-
     setThemeSelected(theme === null ? 'dark' : theme)
-
-
-
   }, [])
 
   function findItem(data: Array<any>, key: string) {
@@ -33,7 +29,6 @@ export function DefineThemeProvider({ children }: DefineThemeProps) {
   //variaveis armazenam os itens ativos
   const [theme, setTheme] = useState({})
 
-
   //funções que definem o item ativo
   const newTheme = findItem(themes.theme, themeSelected)
 
@@ -42,15 +37,13 @@ export function DefineThemeProvider({ children }: DefineThemeProps) {
     setTheme(newTheme)
   }, [themeSelected])
 
-
   //preparando variaveis utilizadas
   const variablesTheme = {
     setThemeSelected,
   }
 
   return (
-    <DefineThemeContext.Provider value={{ variablesTheme, theme }
-    }>
+    <DefineThemeContext.Provider value={{ variablesTheme, theme }}>
       {children}
     </DefineThemeContext.Provider >
   );
@@ -60,3 +53,4 @@ export function useTheme() {
   const context = useContext(DefineThemeContext);
   return context
 }
+
