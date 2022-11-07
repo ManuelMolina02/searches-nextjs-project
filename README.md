@@ -55,7 +55,7 @@ Obs: os dados da aplicação utilizam um recurso do github, que é gratuito e ho
 
 ## 🤔 Como posso visualizar o projeto?
 
-- Para acessar o projeto online [clique aqui!](https://searches-nextjs-project.vercel.app/)
+- Para acessar o projeto online [clique aqui!](https://south-america-prism.vercel.app/)
 
 - Para instalar localmente, siga os passos abaixo:
 
